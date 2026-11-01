@@ -1,0 +1,4634 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "NORTH External API",
+    "version": "1.0.0",
+    "description": "Agent-neutral local API. Loopback HTTP or authenticated HTTPS reverse proxy. All v1 endpoints require a scoped Bearer token."
+  },
+  "servers": [
+    {
+      "url": "/api/v1"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "检查服务",
+        "operationId": "get_health",
+        "tags": [
+          "health"
+        ],
+        "parameters": [],
+        "x-required-scope": "authenticated",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/capabilities": {
+      "get": {
+        "summary": "发现能力与权限",
+        "operationId": "get_capabilities",
+        "tags": [
+          "capabilities"
+        ],
+        "parameters": [],
+        "x-required-scope": "authenticated",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/openapi.json": {
+      "get": {
+        "summary": "获取 OpenAPI 3.1 协议",
+        "operationId": "get_openapi_json",
+        "tags": [
+          "openapi.json"
+        ],
+        "parameters": [],
+        "x-required-scope": "authenticated",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integration-status": {
+      "get": {
+        "summary": "检查通知通道",
+        "operationId": "get_integration_status",
+        "tags": [
+          "integration-status"
+        ],
+        "parameters": [],
+        "x-required-scope": "authenticated",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dashboard": {
+      "get": {
+        "summary": "资讯总览",
+        "operationId": "get_dashboard",
+        "tags": [
+          "dashboard"
+        ],
+        "parameters": [],
+        "x-required-scope": "news:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles": {
+      "get": {
+        "summary": "查询资讯",
+        "operationId": "get_articles",
+        "tags": [
+          "articles"
+        ],
+        "parameters": [
+          {
+            "name": "category",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "q",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "saved",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "official",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "focus",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "month",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "week",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "news:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/news-weeks": {
+      "get": {
+        "summary": "已核实的每周重点新闻归档",
+        "operationId": "get_news_weeks",
+        "tags": [
+          "news-weeks"
+        ],
+        "parameters": [],
+        "x-required-scope": "news:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sources": {
+      "get": {
+        "summary": "来源与同步状态",
+        "operationId": "get_sources",
+        "tags": [
+          "sources"
+        ],
+        "parameters": [],
+        "x-required-scope": "news:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/articles/{id}/saved": {
+      "post": {
+        "summary": "收藏或取消收藏",
+        "operationId": "post_articles_id_saved",
+        "tags": [
+          "articles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "news:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "saved": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "saved"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "saved": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sync": {
+      "post": {
+        "summary": "同步资讯来源",
+        "operationId": "post_sync",
+        "tags": [
+          "sync"
+        ],
+        "parameters": [],
+        "x-required-scope": "news:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitors": {
+      "get": {
+        "summary": "品牌列表",
+        "operationId": "get_competitors",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "competitors:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "新建品牌",
+        "operationId": "post_competitors",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "competitors:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "market": {
+                    "type": "string",
+                    "maxLength": 60
+                  },
+                  "currency": {
+                    "type": "string",
+                    "enum": [
+                      "USD",
+                      "EUR",
+                      "GBP",
+                      "CAD",
+                      "AUD",
+                      "JPY",
+                      "CNY"
+                    ]
+                  },
+                  "website": {
+                    "type": "string"
+                  },
+                  "sources": {
+                    "type": "array",
+                    "maxItems": 20,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "maxLength": 50
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "url"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "own",
+                      "priority",
+                      "competitor"
+                    ]
+                  },
+                  "focus": {
+                    "type": "string",
+                    "maxLength": 160
+                  },
+                  "paused": {
+                    "type": "boolean"
+                  },
+                  "archived": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "name",
+                  "market",
+                  "currency",
+                  "sources"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "name": "品牌名称",
+                "market": "US",
+                "currency": "USD",
+                "website": "https://example.com",
+                "sources": [],
+                "role": "competitor",
+                "focus": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitors/{id}": {
+      "get": {
+        "summary": "品牌产品、价格与动态",
+        "operationId": "get_competitors_id_",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "competitors:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "修改品牌",
+        "operationId": "post_competitors_id_",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "competitors:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "market": {
+                    "type": "string",
+                    "maxLength": 60
+                  },
+                  "currency": {
+                    "type": "string",
+                    "enum": [
+                      "USD",
+                      "EUR",
+                      "GBP",
+                      "CAD",
+                      "AUD",
+                      "JPY",
+                      "CNY"
+                    ]
+                  },
+                  "website": {
+                    "type": "string"
+                  },
+                  "sources": {
+                    "type": "array",
+                    "maxItems": 20,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "label": {
+                          "type": "string",
+                          "maxLength": 50
+                        },
+                        "url": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "label",
+                        "url"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "own",
+                      "priority",
+                      "competitor"
+                    ]
+                  },
+                  "focus": {
+                    "type": "string",
+                    "maxLength": 160
+                  },
+                  "paused": {
+                    "type": "boolean"
+                  },
+                  "archived": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "name",
+                  "market",
+                  "currency",
+                  "sources"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "name": "品牌名称",
+                "market": "US",
+                "currency": "USD",
+                "website": "https://example.com",
+                "sources": [],
+                "role": "competitor",
+                "focus": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitors/{id}/products": {
+      "post": {
+        "summary": "添加型号",
+        "operationId": "post_competitors_id_products",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "competitors:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "line": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "variant": {
+                    "type": "string",
+                    "maxLength": 120
+                  },
+                  "launched_at": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "onsale",
+                      "preorder",
+                      "discontinued"
+                    ]
+                  },
+                  "lens_count": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 20
+                  },
+                  "pack_quantity": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 100
+                  },
+                  "power": {
+                    "type": "string",
+                    "maxLength": 60
+                  }
+                },
+                "required": [
+                  "line",
+                  "name",
+                  "variant"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "line": "Camera",
+                "name": "型号",
+                "variant": "单台",
+                "status": "onsale"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitors/{id}/listings": {
+      "post": {
+        "summary": "添加商品链接",
+        "operationId": "post_competitors_id_listings",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "competitors:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "product_id": {
+                    "type": "string"
+                  },
+                  "platform": {
+                    "type": "string",
+                    "maxLength": 60
+                  },
+                  "seller": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "product_id",
+                  "platform",
+                  "seller",
+                  "url"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "product_id": "产品 ID",
+                "platform": "Amazon",
+                "seller": "卖家",
+                "url": "https://www.amazon.com/dp/B000000000"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitors/{id}/observations": {
+      "post": {
+        "summary": "追加真实价格观察",
+        "operationId": "post_competitors_id_observations",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "competitors:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "listing_id": {
+                    "type": "string"
+                  },
+                  "observed_on": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "sale_price": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "list_price": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "coupon_type": {
+                    "type": "string",
+                    "enum": [
+                      "none",
+                      "amount",
+                      "percent"
+                    ]
+                  },
+                  "coupon_value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "coupon_public": {
+                    "type": "boolean"
+                  },
+                  "conditions": {
+                    "type": "string",
+                    "maxLength": 300
+                  },
+                  "rating": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0,
+                    "maximum": 5
+                  },
+                  "review_count": {
+                    "type": [
+                      "integer",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "availability": {
+                    "type": "string",
+                    "enum": [
+                      "in_stock",
+                      "out_of_stock",
+                      "unknown"
+                    ]
+                  },
+                  "source_url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "listing_id",
+                  "observed_on",
+                  "sale_price",
+                  "coupon_type",
+                  "availability"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "listing_id": "链接 ID",
+                "observed_on": "2026-10-25",
+                "sale_price": 29.99,
+                "coupon_type": "none",
+                "coupon_public": false,
+                "availability": "in_stock"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/competitors/{id}/events": {
+      "post": {
+        "summary": "追加品牌动态",
+        "operationId": "post_competitors_id_events",
+        "tags": [
+          "competitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "competitors:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "launch",
+                      "promotion",
+                      "important",
+                      "guide",
+                      "story"
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "summary": {
+                    "type": "string",
+                    "maxLength": 100
+                  },
+                  "published_on": {
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "starts_on": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date"
+                  },
+                  "ends_on": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date"
+                  },
+                  "source_url": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "title",
+                  "summary",
+                  "published_on",
+                  "source_url"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "kind": "important",
+                "title": "标题",
+                "summary": "已核实的简要事实",
+                "published_on": "2026-10-25",
+                "source_url": "https://example.com/news"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/overview": {
+      "get": {
+        "summary": "搜索监控总览",
+        "operationId": "get_search_overview",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/monitors/{id}": {
+      "get": {
+        "summary": "关键词历史与任务",
+        "operationId": "get_search_monitors_id_",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/snapshots/{id}": {
+      "get": {
+        "summary": "搜索快照",
+        "operationId": "get_search_snapshots_id_",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/snapshots/{id}/evidence": {
+      "get": {
+        "summary": "原页截图",
+        "operationId": "get_search_snapshots_id_evidence",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "image/png": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/ranks": {
+      "get": {
+        "summary": "自然位趋势",
+        "operationId": "get_search_ranks",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "monitor",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "asin",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/sales": {
+      "get": {
+        "summary": "有来源的销量汇总",
+        "operationId": "get_search_sales",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "period",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "snapshot",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cohort",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/sales-template": {
+      "get": {
+        "summary": "销量 CSV 模板",
+        "operationId": "get_search_sales_template",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/sales-batches": {
+      "get": {
+        "summary": "销量导入批次",
+        "operationId": "get_search_sales_batches",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/sales-batches/{id}": {
+      "get": {
+        "summary": "批次预览",
+        "operationId": "get_search_sales_batches_id_",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/export": {
+      "get": {
+        "summary": "快照 CSV 导出",
+        "operationId": "get_search_export",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "snapshot",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/monitors": {
+      "post": {
+        "summary": "创建搜索词监控",
+        "operationId": "post_search_monitors",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "keyword": {
+                    "type": "string",
+                    "maxLength": 160,
+                    "minLength": 1
+                  },
+                  "group_name": {
+                    "type": "string",
+                    "maxLength": 60
+                  },
+                  "profile": {
+                    "type": "object",
+                    "properties": {
+                      "marketplace": {
+                        "const": "US"
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "pattern": "^\\d{5}$",
+                        "default": "60202"
+                      },
+                      "timezone": {
+                        "type": "string",
+                        "enum": [
+                          "America/Chicago",
+                          "America/New_York",
+                          "America/Los_Angeles",
+                          "America/Denver"
+                        ]
+                      },
+                      "pages": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 3
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "hours": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 6,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 23
+                    }
+                  },
+                  "targets": {
+                    "type": "array",
+                    "maxItems": 30,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "asin": {
+                          "type": "string",
+                          "pattern": "^[A-Z0-9]{10}$"
+                        },
+                        "label": {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "goal_rank": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 300
+                        }
+                      },
+                      "required": [
+                        "asin"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "draft",
+                      "active",
+                      "paused",
+                      "archived"
+                    ]
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3
+                  }
+                },
+                "required": [
+                  "keyword"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "keyword": "indoor security camera",
+                "group_name": "室内摄像头",
+                "profile": {
+                  "marketplace": "US",
+                  "postal_code": "60202",
+                  "timezone": "America/Chicago",
+                  "pages": 3
+                },
+                "hours": [
+                  8,
+                  14,
+                  20
+                ],
+                "targets": [],
+                "state": "draft",
+                "priority": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/monitors/{id}/update": {
+      "post": {
+        "summary": "更新监控条件（完整配置，非局部 PATCH）",
+        "operationId": "post_search_monitors_id_update",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "keyword": {
+                    "type": "string",
+                    "maxLength": 160,
+                    "minLength": 1
+                  },
+                  "group_name": {
+                    "type": "string",
+                    "maxLength": 60
+                  },
+                  "profile": {
+                    "type": "object",
+                    "properties": {
+                      "marketplace": {
+                        "const": "US"
+                      },
+                      "postal_code": {
+                        "type": "string",
+                        "pattern": "^\\d{5}$",
+                        "default": "60202"
+                      },
+                      "timezone": {
+                        "type": "string",
+                        "enum": [
+                          "America/Chicago",
+                          "America/New_York",
+                          "America/Los_Angeles",
+                          "America/Denver"
+                        ]
+                      },
+                      "pages": {
+                        "type": "integer",
+                        "minimum": 1,
+                        "maximum": 3
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "hours": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 6,
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 23
+                    }
+                  },
+                  "targets": {
+                    "type": "array",
+                    "maxItems": 30,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "asin": {
+                          "type": "string",
+                          "pattern": "^[A-Z0-9]{10}$"
+                        },
+                        "label": {
+                          "type": "string",
+                          "maxLength": 100
+                        },
+                        "goal_rank": {
+                          "type": "integer",
+                          "minimum": 1,
+                          "maximum": 300
+                        }
+                      },
+                      "required": [
+                        "asin"
+                      ],
+                      "additionalProperties": true
+                    }
+                  },
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "draft",
+                      "active",
+                      "paused",
+                      "archived"
+                    ]
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 3
+                  }
+                },
+                "required": [
+                  "keyword"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "keyword": "indoor security camera",
+                "group_name": "室内摄像头",
+                "profile": {
+                  "marketplace": "US",
+                  "postal_code": "60202",
+                  "timezone": "America/Chicago",
+                  "pages": 3
+                },
+                "hours": [
+                  8,
+                  14,
+                  20
+                ],
+                "targets": [],
+                "state": "draft",
+                "priority": 2
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/monitors/{id}/run": {
+      "post": {
+        "summary": "排队采集当前页面",
+        "operationId": "post_search_monitors_id_run",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "202": {
+            "description": "已排队；用任务查询接口检查最终结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {}
+            }
+          }
+        }
+      }
+    },
+    "/search/identities": {
+      "post": {
+        "summary": "维护品牌与自有 ASIN 身份",
+        "operationId": "post_search_identities",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "marketplace": {
+                    "const": "US"
+                  },
+                  "asin": {
+                    "type": "string",
+                    "pattern": "^[A-Z0-9]{10}$"
+                  },
+                  "brand": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "label": {
+                    "type": "string",
+                    "maxLength": 120
+                  },
+                  "parent_asin": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "own": {
+                    "type": "boolean"
+                  },
+                  "source_url": {
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": [
+                  "asin",
+                  "brand",
+                  "own",
+                  "source_url"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "marketplace": "US",
+                "asin": "B000000000",
+                "brand": "HOMA",
+                "label": "实际型号",
+                "own": true,
+                "source_url": "https://www.amazon.com/dp/B000000000"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/snapshots/{id}/recalculate": {
+      "post": {
+        "summary": "按当前身份重算快照",
+        "operationId": "post_search_snapshots_id_recalculate",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {}
+            }
+          }
+        }
+      }
+    },
+    "/search/cohorts": {
+      "post": {
+        "summary": "冻结商品集合",
+        "operationId": "post_search_cohorts",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "snapshot_id": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 80
+                  }
+                },
+                "required": [
+                  "snapshot_id",
+                  "name"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "snapshot_id": "快照 UUID",
+                "name": "固定样本"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/sales-preview": {
+      "post": {
+        "summary": "校验并预览销量 CSV",
+        "operationId": "post_search_sales_preview",
+        "tags": [
+          "search"
+        ],
+        "parameters": [],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "content": {
+                    "type": "string",
+                    "description": "UTF-8 CSV 文本；完整 JSON 请求不超过 4 MiB"
+                  },
+                  "filename": {
+                    "type": "string",
+                    "maxLength": 200
+                  }
+                },
+                "required": [
+                  "content"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "filename": "sales.csv",
+                "content": "CSV 内容"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/search/sales-batches/{id}/commit": {
+      "post": {
+        "summary": "提交已校验销量",
+        "operationId": "post_search_sales_batches_id_commit",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {}
+            }
+          }
+        }
+      }
+    },
+    "/search/sales-batches/{id}/revert": {
+      "post": {
+        "summary": "撤销销量批次",
+        "operationId": "post_search_sales_batches_id_revert",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {}
+            }
+          }
+        }
+      }
+    },
+    "/search/alerts/{id}": {
+      "post": {
+        "summary": "处理搜索异常",
+        "operationId": "post_search_alerts_id_",
+        "tags": [
+          "search"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "state": {
+                    "type": "string",
+                    "enum": [
+                      "new",
+                      "acknowledged",
+                      "investigating",
+                      "resolved",
+                      "closed"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 2000
+                  },
+                  "owner": {
+                    "type": "string",
+                    "maxLength": 80
+                  },
+                  "review_on": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "format": "date"
+                  }
+                },
+                "required": [
+                  "state"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "state": "acknowledged",
+                "note": "已开始核查",
+                "owner": "负责人",
+                "review_on": null
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors": {
+      "get": {
+        "summary": "商品监控列表",
+        "operationId": "get_asin_monitors",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "添加商品监控",
+        "operationId": "post_asin_monitors",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "201": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "ASIN 或 Amazon US 商品 URL；与 asin 至少提供一个"
+                  },
+                  "asin": {
+                    "type": "string"
+                  },
+                  "marketplace": {
+                    "const": "US"
+                  },
+                  "name": {
+                    "type": "string",
+                    "maxLength": 240
+                  },
+                  "tags": {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "brand_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "listing_id": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "profile": {
+                    "type": "object",
+                    "properties": {
+                      "zip": {
+                        "type": "string",
+                        "pattern": "^\\d{5}$"
+                      },
+                      "country": {
+                        "const": "US"
+                      },
+                      "language": {
+                        "const": "en-US"
+                      },
+                      "currency": {
+                        "const": "USD"
+                      },
+                      "login": {
+                        "const": "guest"
+                      },
+                      "prime": {
+                        "const": false
+                      },
+                      "viewport": {
+                        "const": "1440x1000"
+                      },
+                      "reviews": {
+                        "const": "pdp-default"
+                      },
+                      "offer": {
+                        "const": "featured-new"
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "rules": {
+                    "type": "object",
+                    "properties": {
+                      "price_hours": {
+                        "type": "integer",
+                        "enum": [
+                          1,
+                          4,
+                          12,
+                          24
+                        ]
+                      },
+                      "content_hours": {
+                        "type": "integer",
+                        "enum": [
+                          4,
+                          12,
+                          24,
+                          48
+                        ]
+                      },
+                      "price_percent": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "active",
+                      "paused"
+                    ]
+                  }
+                },
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {
+                "input": "https://www.amazon.com/dp/B000000000",
+                "name": "实际产品名称"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/catalog": {
+      "get": {
+        "summary": "已知 ASIN 目录",
+        "operationId": "get_asin_monitors_catalog",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/notifications": {
+      "get": {
+        "summary": "商品变化提醒",
+        "operationId": "get_asin_monitors_notifications",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/digest": {
+      "get": {
+        "summary": "商品变化日报",
+        "operationId": "get_asin_monitors_digest",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "day",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}": {
+      "get": {
+        "summary": "商品详情与历史",
+        "operationId": "get_asin_monitors_id_",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "修改或暂停商品监控",
+        "operationId": "post_asin_monitors_id_",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "maxLength": 240
+                  },
+                  "tags": {
+                    "type": "string",
+                    "maxLength": 200
+                  },
+                  "profile": {
+                    "type": "object",
+                    "properties": {
+                      "zip": {
+                        "type": "string",
+                        "pattern": "^\\d{5}$"
+                      },
+                      "country": {
+                        "const": "US"
+                      },
+                      "language": {
+                        "const": "en-US"
+                      },
+                      "currency": {
+                        "const": "USD"
+                      },
+                      "login": {
+                        "const": "guest"
+                      },
+                      "prime": {
+                        "const": false
+                      },
+                      "viewport": {
+                        "const": "1440x1000"
+                      },
+                      "reviews": {
+                        "const": "pdp-default"
+                      },
+                      "offer": {
+                        "const": "featured-new"
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "rules": {
+                    "type": "object",
+                    "properties": {
+                      "price_hours": {
+                        "type": "integer",
+                        "enum": [
+                          1,
+                          4,
+                          12,
+                          24
+                        ]
+                      },
+                      "content_hours": {
+                        "type": "integer",
+                        "enum": [
+                          4,
+                          12,
+                          24,
+                          48
+                        ]
+                      },
+                      "price_percent": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 100
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "active",
+                      "paused",
+                      "archived"
+                    ]
+                  }
+                },
+                "required": [],
+                "additionalProperties": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/template": {
+      "get": {
+        "summary": "手工观察模板",
+        "operationId": "get_asin_monitors_id_template",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/snapshots/{snapshot_id}": {
+      "get": {
+        "summary": "单份商品快照",
+        "operationId": "get_asin_monitors_id_snapshots_snapshot_id_",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "snapshot_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/compare": {
+      "get": {
+        "summary": "比较同条件商品快照",
+        "operationId": "get_asin_monitors_id_compare",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "after",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/evidence/{evidence_id}": {
+      "get": {
+        "summary": "商品原始证据",
+        "operationId": "get_asin_monitors_id_evidence_evidence_id_",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "evidence_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/export": {
+      "get": {
+        "summary": "商品历史导出",
+        "operationId": "get_asin_monitors_id_export",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "text/csv": {
+                "schema": {
+                  "type": "string",
+                  "format": "binary"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/import": {
+      "post": {
+        "summary": "批量添加 ASIN",
+        "operationId": "post_asin_monitors_import",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "201": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 50,
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "input": {
+                          "type": "string",
+                          "description": "ASIN 或 Amazon US 商品 URL；与 asin 至少提供一个"
+                        },
+                        "asin": {
+                          "type": "string"
+                        },
+                        "marketplace": {
+                          "const": "US"
+                        },
+                        "name": {
+                          "type": "string",
+                          "maxLength": 240
+                        },
+                        "tags": {
+                          "type": "string",
+                          "maxLength": 200
+                        },
+                        "brand_id": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "listing_id": {
+                          "type": [
+                            "string",
+                            "null"
+                          ]
+                        },
+                        "profile": {
+                          "type": "object",
+                          "properties": {
+                            "zip": {
+                              "type": "string",
+                              "pattern": "^\\d{5}$"
+                            },
+                            "country": {
+                              "const": "US"
+                            },
+                            "language": {
+                              "const": "en-US"
+                            },
+                            "currency": {
+                              "const": "USD"
+                            },
+                            "login": {
+                              "const": "guest"
+                            },
+                            "prime": {
+                              "const": false
+                            },
+                            "viewport": {
+                              "const": "1440x1000"
+                            },
+                            "reviews": {
+                              "const": "pdp-default"
+                            },
+                            "offer": {
+                              "const": "featured-new"
+                            }
+                          },
+                          "required": [],
+                          "additionalProperties": true
+                        },
+                        "rules": {
+                          "type": "object",
+                          "properties": {
+                            "price_hours": {
+                              "type": "integer",
+                              "enum": [
+                                1,
+                                4,
+                                12,
+                                24
+                              ]
+                            },
+                            "content_hours": {
+                              "type": "integer",
+                              "enum": [
+                                4,
+                                12,
+                                24,
+                                48
+                              ]
+                            },
+                            "price_percent": {
+                              "type": "number",
+                              "minimum": 0,
+                              "maximum": 100
+                            }
+                          },
+                          "required": [],
+                          "additionalProperties": true
+                        },
+                        "status": {
+                          "type": "string",
+                          "enum": [
+                            "active",
+                            "paused"
+                          ]
+                        }
+                      },
+                      "required": [],
+                      "additionalProperties": true
+                    }
+                  },
+                  "defaults": {
+                    "type": "object",
+                    "properties": {
+                      "input": {
+                        "type": "string",
+                        "description": "ASIN 或 Amazon US 商品 URL；与 asin 至少提供一个"
+                      },
+                      "asin": {
+                        "type": "string"
+                      },
+                      "marketplace": {
+                        "const": "US"
+                      },
+                      "name": {
+                        "type": "string",
+                        "maxLength": 240
+                      },
+                      "tags": {
+                        "type": "string",
+                        "maxLength": 200
+                      },
+                      "brand_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "listing_id": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "profile": {
+                        "type": "object",
+                        "properties": {
+                          "zip": {
+                            "type": "string",
+                            "pattern": "^\\d{5}$"
+                          },
+                          "country": {
+                            "const": "US"
+                          },
+                          "language": {
+                            "const": "en-US"
+                          },
+                          "currency": {
+                            "const": "USD"
+                          },
+                          "login": {
+                            "const": "guest"
+                          },
+                          "prime": {
+                            "const": false
+                          },
+                          "viewport": {
+                            "const": "1440x1000"
+                          },
+                          "reviews": {
+                            "const": "pdp-default"
+                          },
+                          "offer": {
+                            "const": "featured-new"
+                          }
+                        },
+                        "required": [],
+                        "additionalProperties": true
+                      },
+                      "rules": {
+                        "type": "object",
+                        "properties": {
+                          "price_hours": {
+                            "type": "integer",
+                            "enum": [
+                              1,
+                              4,
+                              12,
+                              24
+                            ]
+                          },
+                          "content_hours": {
+                            "type": "integer",
+                            "enum": [
+                              4,
+                              12,
+                              24,
+                              48
+                            ]
+                          },
+                          "price_percent": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 100
+                          }
+                        },
+                        "required": [],
+                        "additionalProperties": true
+                      },
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "active",
+                          "paused"
+                        ]
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  }
+                },
+                "required": [
+                  "items"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "items": [
+                  {
+                    "input": "B000000000"
+                  }
+                ],
+                "defaults": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/notifications/read": {
+      "post": {
+        "summary": "标记商品提醒已读",
+        "operationId": "post_asin_monitors_notifications_read",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {}
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/settings": {
+      "post": {
+        "summary": "设置商品采集额度",
+        "operationId": "post_asin_monitors_settings",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "daily_limit": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 1000
+                  }
+                },
+                "required": [
+                  "daily_limit"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "daily_limit": 350
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/check": {
+      "post": {
+        "summary": "排队商品采集",
+        "operationId": "post_asin_monitors_id_check",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "202": {
+            "description": "已排队；用任务查询接口检查最终结果",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "module": {
+                    "type": "string",
+                    "enum": [
+                      "all",
+                      "price",
+                      "content"
+                    ]
+                  }
+                },
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {
+                "module": "all"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/snapshots": {
+      "post": {
+        "summary": "导入真实商品观察",
+        "operationId": "post_asin_monitors_id_snapshots",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "201": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "asin": {
+                    "type": "string"
+                  },
+                  "marketplace": {
+                    "const": "US"
+                  },
+                  "profile": {
+                    "type": "object",
+                    "properties": {
+                      "zip": {
+                        "type": "string",
+                        "pattern": "^\\d{5}$"
+                      },
+                      "country": {
+                        "const": "US"
+                      },
+                      "language": {
+                        "const": "en-US"
+                      },
+                      "currency": {
+                        "const": "USD"
+                      },
+                      "login": {
+                        "const": "guest"
+                      },
+                      "prime": {
+                        "const": false
+                      },
+                      "viewport": {
+                        "const": "1440x1000"
+                      },
+                      "reviews": {
+                        "const": "pdp-default"
+                      },
+                      "offer": {
+                        "const": "featured-new"
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "observed_at": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "fields": {
+                    "type": "object",
+                    "description": "键名及字段结构见 GET /asin-monitors/{id}/template；必须用真实观察数据，unknown 不等于 absent",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "state": {
+                          "type": "string",
+                          "enum": [
+                            "observed",
+                            "unknown",
+                            "absent"
+                          ]
+                        },
+                        "value": {},
+                        "raw": {
+                          "type": "string"
+                        },
+                        "reason": {
+                          "type": "string"
+                        },
+                        "currency": {
+                          "type": "string"
+                        },
+                        "precision": {
+                          "type": "string",
+                          "enum": [
+                            "exact",
+                            "approximate"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "state"
+                      ],
+                      "additionalProperties": true
+                    }
+                  }
+                },
+                "required": [
+                  "asin",
+                  "marketplace",
+                  "profile",
+                  "observed_at",
+                  "fields"
+                ],
+                "additionalProperties": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/asin-monitors/{id}/events/{event_id}": {
+      "post": {
+        "summary": "处理商品变化",
+        "operationId": "post_asin_monitors_id_events_event_id_",
+        "tags": [
+          "asin-monitors"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "event_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:write",
+        "description": "与网页调用同一领域服务；校验、数据口径与采集限制一致。请求字段见项目接入说明与现有界面。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "confirmed",
+                      "ignored"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 1000
+                  },
+                  "starred": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [],
+                "additionalProperties": true
+              },
+              "example": {
+                "status": "confirmed",
+                "note": "已核查",
+                "starred": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs/search/{id}": {
+      "get": {
+        "summary": "查询搜索采集任务",
+        "operationId": "get_jobs_search_id_",
+        "tags": [
+          "jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "search:read",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/jobs/asin/{id}": {
+      "get": {
+        "summary": "查询商品采集任务",
+        "operationId": "get_jobs_asin_id_",
+        "tags": [
+          "jobs"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "asin:read",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "summary": "按持久化游标读取事件",
+        "operationId": "get_events",
+        "tags": [
+          "events"
+        ],
+        "parameters": [
+          {
+            "name": "after",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "events:read",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "发布自定义事件，可同时请求飞书通知",
+        "operationId": "post_events",
+        "tags": [
+          "events"
+        ],
+        "parameters": [
+          {
+            "name": "Idempotency-Key",
+            "in": "header",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120
+            }
+          }
+        ],
+        "x-required-scope": "events:write",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "201": {
+            "description": "事件已持久化；不等于飞书已发送",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "pattern": "^(agent|external)\\.[a-z0-9_.-]+$",
+                    "maxLength": 100
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "info",
+                      "important",
+                      "critical"
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 120,
+                    "minLength": 1
+                  },
+                  "body": {
+                    "type": "string",
+                    "maxLength": 3000,
+                    "minLength": 1
+                  },
+                  "object_ref": {
+                    "type": "object",
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "maxLength": 120
+                      },
+                      "id": {
+                        "type": "string",
+                        "maxLength": 120
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "occurred_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "实际发生时间，省略时用服务器入库时间；必须带时区"
+                  },
+                  "notify": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "true 还需 notify:write 以及已配置的飞书通道"
+                  }
+                },
+                "required": [
+                  "type",
+                  "title",
+                  "body"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "type": "agent.report.ready",
+                "severity": "info",
+                "title": "分析已完成",
+                "body": "报告内容摘要",
+                "object_ref": {
+                  "kind": "report",
+                  "id": "report-001"
+                },
+                "notify": false
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notifications/preview": {
+      "post": {
+        "summary": "预览飞书纯文本，不写入或发送",
+        "operationId": "post_notifications_preview",
+        "tags": [
+          "notifications"
+        ],
+        "parameters": [],
+        "x-required-scope": "events:write",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string",
+                    "pattern": "^(agent|external)\\.[a-z0-9_.-]+$",
+                    "maxLength": 100
+                  },
+                  "severity": {
+                    "type": "string",
+                    "enum": [
+                      "info",
+                      "important",
+                      "critical"
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "maxLength": 120,
+                    "minLength": 1
+                  },
+                  "body": {
+                    "type": "string",
+                    "maxLength": 3000,
+                    "minLength": 1
+                  },
+                  "object_ref": {
+                    "type": "object",
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "maxLength": 120
+                      },
+                      "id": {
+                        "type": "string",
+                        "maxLength": 120
+                      }
+                    },
+                    "required": [],
+                    "additionalProperties": true
+                  },
+                  "occurred_at": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "实际发生时间，省略时用服务器入库时间；必须带时区"
+                  },
+                  "notify": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "true 还需 notify:write 以及已配置的飞书通道"
+                  }
+                },
+                "required": [
+                  "type",
+                  "title",
+                  "body"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "type": "agent.report.ready",
+                "severity": "info",
+                "title": "分析已完成",
+                "body": "报告内容摘要"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notifications": {
+      "get": {
+        "summary": "查询发送队列与结果",
+        "operationId": "get_notifications",
+        "tags": [
+          "notifications"
+        ],
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "before",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "events:read",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notifications/{id}/retry": {
+      "post": {
+        "summary": "重试明确失败的投递",
+        "operationId": "post_notifications_id_retry",
+        "tags": [
+          "notifications"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "notify:write",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": false,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {},
+                "required": [],
+                "additionalProperties": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/notifications/{id}/resolve": {
+      "post": {
+        "summary": "核查不确定投递、取消排队",
+        "operationId": "post_notifications_id_resolve",
+        "tags": [
+          "notifications"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "x-required-scope": "notify:write",
+        "description": "稳定对外协议。",
+        "responses": {
+          "200": {
+            "description": "成功。业务 JSON 保留原结构；文件保持原始媒体类型。",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "调用失败",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "action": {
+                    "type": "string",
+                    "enum": [
+                      "cancel",
+                      "confirmed_sent",
+                      "confirmed_not_sent"
+                    ]
+                  },
+                  "note": {
+                    "type": "string",
+                    "maxLength": 500,
+                    "minLength": 1
+                  },
+                  "provider_message_id": {
+                    "type": "string",
+                    "maxLength": 200,
+                    "description": "confirmed_sent 时必填，来自已核实的飞书消息"
+                  }
+                },
+                "required": [
+                  "action",
+                  "note"
+                ],
+                "additionalProperties": true
+              },
+              "example": {
+                "action": "cancel"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "north token"
+      }
+    },
+    "schemas": {
+      "Error": {
+        "type": "object",
+        "required": [
+          "error",
+          "request_id"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message",
+              "request_id"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "request_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

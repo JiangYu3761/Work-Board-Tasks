@@ -1,0 +1,35 @@
+{
+  "name": "north-personal-radar",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "north": "bin/north.mjs"
+  },
+  "description": "北向 · 本地资讯与政策工作台",
+  "scripts": {
+    "setup": "node --env-file-if-exists=.env scripts/setup.mjs && node --env-file-if-exists=.env scripts/archive.mjs",
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "sync": "node --env-file-if-exists=.env scripts/sync.mjs",
+    "test": "node --env-file-if-exists=.env --test tests/*.test.mjs",
+    "north": "node bin/north.mjs",
+    "archive": "node --env-file-if-exists=.env scripts/archive.mjs",
+    "competitors": "node --env-file-if-exists=.env scripts/competitors.mjs",
+    "competitor-news": "node --env-file-if-exists=.env scripts/competitor-news.mjs",
+    "competitor-announcements": "node --env-file-if-exists=.env scripts/competitor-announcements.mjs",
+    "monitor-worker": "node --env-file-if-exists=.env scripts/search-monitor-worker.mjs",
+    "monitor-setup": "node --env-file-if-exists=.env scripts/setup-search-monitor.mjs",
+    "weekly-news": "node --env-file-if-exists=.env scripts/weekly-news.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "csv-parse": "^7.0.3",
+    "fast-xml-parser": "^5.11.2",
+    "pg": "^8.23.1",
+    "playwright-core": "1.62.1",
+    "sharp": "0.35.5"
+  }
+}

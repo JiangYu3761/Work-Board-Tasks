@@ -1,0 +1,15 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.runtime/
+.state/
+.DS_Store
+*.log
+
+# Local research, screenshots, transfer packages, and database backups.
+work/
+output/
+outputs/
+*.dump
+settings.env

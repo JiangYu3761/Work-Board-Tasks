@@ -1,0 +1,3148 @@
+{
+  "id": "weekly-tech-20260725-20261025",
+  "period_start": "2026-07-25",
+  "period_end": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "methodology": "以2026-10-25为回溯截止日，过去三个日历月为2026-07-25至2026-10-25。周一至周日分组，使用发布者明示的当地日历日期，避免UTC换算造成跨日错分。首周仅覆盖7月25—26日；末周截至抓取时点。优先选取对模型能力、产品入口、算力供给、产业财务、科研应用或安全治理产生实质影响的官方公告。重要性分数与入选理由为编辑判断。厂商性能主张注明主体，计划、预览、交易公告不等同实现、全面开放或交易完成。只保存原创短摘要与可追溯元数据，不以全文转载填充数据库。属于重点精选，非所有新闻的穷尽目录；不自动开通未来定时任务。",
+  "sources": [
+    {
+      "id": "samsung",
+      "name": "Samsung Newsroom",
+      "url": "https://news.samsung.com/global/",
+      "category": "ai"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA",
+      "url": "https://nvidianews.nvidia.com/",
+      "category": "ai"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft 投资者关系",
+      "url": "https://www.microsoft.com/en-us/investor/",
+      "category": "ai"
+    },
+    {
+      "id": "amazon-news",
+      "name": "Amazon 官方新闻与投资者关系",
+      "url": "https://ir.aboutamazon.com/",
+      "category": "commerce"
+    },
+    {
+      "id": "apple",
+      "name": "Apple Newsroom",
+      "url": "https://www.apple.com/newsroom/",
+      "category": "ai"
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "url": "https://blog.google/technology/ai/",
+      "category": "ai"
+    },
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "url": "https://openai.com/news/",
+      "category": "ai"
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek 官方文档",
+      "url": "https://api-docs.deepseek.com/",
+      "category": "ai"
+    },
+    {
+      "id": "qwen",
+      "name": "Qwen 官方博客",
+      "url": "https://qwen.ai/blog",
+      "category": "ai"
+    },
+    {
+      "id": "shopify",
+      "name": "Shopify",
+      "url": "https://www.shopify.com/investors",
+      "category": "commerce"
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "url": "https://www.anthropic.com/news",
+      "category": "ai"
+    },
+    {
+      "id": "alibaba",
+      "name": "Alibaba Group",
+      "url": "https://www.alibabagroup.com/",
+      "category": "commerce"
+    }
+  ],
+  "source_audits": [
+    {
+      "publisher": "OpenAI",
+      "method": "Official RSS historical index + web article retrieval",
+      "candidates": 192,
+      "note": "直接HTTP正文请求被403阻止，改用web读取原文；RSS提供发布日期。"
+    },
+    {
+      "publisher": "NVIDIA",
+      "method": "Newsroom archive pagination",
+      "pages": 14,
+      "note": "逐页回溯至7月25日之前；博客UTC时间与新闻目录当地日期可能跨日，采用目录当地日期。"
+    },
+    {
+      "publisher": "Google",
+      "method": "July/August/September monthly roundup discovery + linked primary pages",
+      "note": "剔除实际发表于7月25日之前的条目；区分月度回顾与原始发布。"
+    },
+    {
+      "publisher": "Anthropic",
+      "method": "Newsroom index + dated official announcements"
+    },
+    {
+      "publisher": "Apple",
+      "method": "Reuse previously captured US newsroom index, re-fetch selected primary pages"
+    },
+    {
+      "publisher": "DeepSeek",
+      "method": "Official changelog date sections + release pages"
+    },
+    {
+      "publisher": "Qwen",
+      "method": "Official publisher indexed page",
+      "note": "1条依据官方搜索索引核对；动态原页未返回正文，单独标记证据等级。"
+    },
+    {
+      "publisher": "Samsung / Microsoft / Amazon / Shopify / Alibaba",
+      "method": "Official newsroom or investor-relations primary pages"
+    }
+  ],
+  "articles": [
+    {
+      "event_key": "samsung-2026-07-25-bd739fbc33",
+      "source_id": "samsung",
+      "published_at": "2026-07-25",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 86,
+      "title": "三星与博通扩大存储、代工和封装合作",
+      "summary": "双方签署合作备忘录，涉及HBM、2纳米及以下制程和先进封装；规模展望属于未来合作预期。",
+      "importance_reason": "覆盖AI加速器核心供应链，需区分合作意向与已交付产能。",
+      "url": "https://news.samsung.com/global/samsung-electronics-and-broadcom-expand-strategic-collaboration-across-memory-and-foundry-technologies",
+      "tags": [
+        "Samsung Newsroom",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://news.samsung.com/global/samsung-electronics-and-broadcom-expand-strategic-collaboration-across-memory-and-foundry-technologies",
+        "source_title": "Samsung Electronics and Broadcom Expand Strategic Collaboration Across Memory and Foundry Technologies",
+        "date_evidence": "meta[name=\"date\"]: 2026-07-25T14:32:00+09:00",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:27.685Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "cd9df2628d6317f9b66c3ec47584621233f8e51484b48cc919c086f722b0f1ab"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-07-26-993033182d",
+      "source_id": "nvidia",
+      "published_at": "2026-07-26",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 78,
+      "title": "NVIDIA 将 Vera CPU 用于芯片设计流程",
+      "summary": "NVIDIA与Cadence、Synopsys优化电子设计自动化软件，并在内部芯片设计工作中部署Vera CPU。",
+      "importance_reason": "算力硬件开始反向加速下一代芯片研发。",
+      "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/vera-cpu-eda/",
+        "source_title": "NVIDIA Harnesses Vera CPU to Speed Up Design of Next-Generation CPUs and GPUs",
+        "date_evidence": "Official newsroom archive local dateline 2026-07-26; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.910Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "ec2011e4eb5b1930c68d9c1d5a82efc41b31fe674cd762380cc4b7827f9847cd",
+        "index_url": "https://nvidianews.nvidia.com/news?page=14"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-07-26-973f2ef3c6",
+      "source_id": "nvidia",
+      "published_at": "2026-07-26",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 80,
+      "title": "NVIDIA 为工程智能体接入物理仿真工具",
+      "summary": "Agent Toolkit加入PhysicsNeMo与CUDA-X工具和技能，将智能体工作流扩展至工程设计与产品开发。",
+      "importance_reason": "工程仿真成为通用智能体的新应用领域。",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds",
+      "tags": [
+        "NVIDIA",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-expands-nvidia-agent-toolkit-with-nvidia-physicsnemo-and-cuda-x-libraries-to-transform-how-the-world-engineers-designs-and-builds",
+        "source_title": "NVIDIA Expands NVIDIA Agent Toolkit With NVIDIA PhysicsNeMo and CUDA-X Libraries to Transform How the World Engineers, Designs and Builds",
+        "date_evidence": "Official newsroom archive local dateline 2026-07-26; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:53.728Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "e99c307afab82e53879373743dd7524780805fd1b77d96bef16c3daa17ec3bb4",
+        "index_url": "https://nvidianews.nvidia.com/news?page=14"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-07-27-6edf3f426c",
+      "source_id": "nvidia",
+      "published_at": "2026-07-27",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 86,
+      "title": "Open Secure AI Alliance 成立",
+      "summary": "NVIDIA与创始成员成立开放安全AI联盟，共建和共享智能体安全工具，推动产业协作。",
+      "importance_reason": "安全工具开始由单家公司方案走向跨厂商协作。",
+      "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+      "tags": [
+        "NVIDIA",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance/",
+        "source_title": "Industry Leaders Unite in Open Secure AI Alliance for AI Safety and Security",
+        "date_evidence": "Official newsroom archive local dateline 2026-07-27; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.642Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "8fb5cc0a8daf963eb2355638cfa119772ca0ef733645a86bbfbbddeb952061dc",
+        "index_url": "https://nvidianews.nvidia.com/news?page=14"
+      }
+    },
+    {
+      "event_key": "microsoft-2026-07-29-61b0b5406b",
+      "source_id": "microsoft",
+      "published_at": "2026-07-29",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 89,
+      "title": "微软财季营收增长18%，Azure 年收入突破千亿美元",
+      "summary": "微软披露2026财年第四季营收900亿美元，同比增长18%；Azure全年收入首次超过1000亿美元。",
+      "importance_reason": "提供云与AI商业需求的财务证据。",
+      "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+      "tags": [
+        "Microsoft 投资者关系",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
+        "source_title": "Microsoft Cloud and AI Strength Fuels Fourth Quarter Results",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-07-29",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:28.875Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "a2f70e3f25182e19e4997991b5e4c213257659a7e8d19793892730c71ca1f223"
+      }
+    },
+    {
+      "event_key": "amazon-news-2026-07-30-f225fce079",
+      "source_id": "amazon-news",
+      "published_at": "2026-07-30",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 90,
+      "title": "亚马逊第二季度销售增长20%，AWS 增长37%",
+      "summary": "季度净销售额2006亿美元；AWS销售额422亿美元，同比增长37%。净利润包含大额投资收益。",
+      "importance_reason": "同时反映电商、广告和云业务需求，避免把投资收益误当经营改善。",
+      "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+      "tags": [
+        "Amazon 官方新闻与投资者关系",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/default.aspx",
+        "source_title": "Amazon.com Announces Second Quarter Results",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-07-30",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:29.489Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "405265bed4fd3cdbde1ba625b99ff49ded03fabc7eb0e8d3c0ba70af1fd7ecfc"
+      }
+    },
+    {
+      "event_key": "apple-2026-07-30-0931be7ee1",
+      "source_id": "apple",
+      "published_at": "2026-07-30",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 82,
+      "title": "Apple 发布2026财年第三季度业绩",
+      "summary": "Apple公布截至6月27日的季度财务结果，为观察消费电子和服务业务提供官方数据。",
+      "importance_reason": "消费科技龙头财报是产业需求的重要观察点。",
+      "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
+        "source_title": "Apple reports third quarter results",
+        "date_evidence": "jsonld:datePublished: 2026-07-30Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:49.622Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "319282e38707ddb6dac26d7b65775d0c818e1e67fc05da824d8182548a279078"
+      }
+    },
+    {
+      "event_key": "google-2026-07-30-a27bdeca48",
+      "source_id": "google",
+      "published_at": "2026-07-30",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 88,
+      "title": "Google 发布 Gemini Robotics ER 2",
+      "summary": "新模型加强视频理解、工具调度和多机器人协作，面向机器人开发者推进复杂现实任务。",
+      "importance_reason": "多模态推理进一步进入机器人任务执行。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+      "tags": [
+        "Google",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/",
+        "source_title": "Introducing Gemini Robotics ER 2",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-07-30",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:22.742Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "251fe31ad58f03e98f7876cd9a6100f9f54d1f309d8f05dd59b1a34073f51c79",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-07-29-d0cb889714",
+      "source_id": "google",
+      "published_at": "2026-07-29",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 78,
+      "title": "Google 发布音乐生成模型 Lyria 3.5",
+      "summary": "Lyria 3.5进入Google Flow Music，升级旋律、歌词、人声质量及创作控制。",
+      "importance_reason": "生成式音乐工具影响内容生产方式和创作者工作流。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/",
+        "source_title": "We’re launching Lyria 3.5 in Google Flow Music, with advances across musicality, lyrics, vocals, and creative control.",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-07-29",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:22.756Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "bb957493079648e46d2897b348e4c13013b528dffcdb401554a2e12595cbbd08",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-july-2026/"
+      }
+    },
+    {
+      "event_key": "openai-2026-07-30-dca7adc62d",
+      "source_id": "openai",
+      "published_at": "2026-07-30",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 90,
+      "title": "OpenAI 下调 GPT-5.6 Luna 与 Terra 价格",
+      "summary": "公告称Luna价格降低80%、Terra降低20%，并为Sol提供更快的API处理模式。",
+      "importance_reason": "大幅降价改变高频智能体任务的经济性。",
+      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+        "source_title": "Advancing the price-performance frontier with GPT-5.6",
+        "date_evidence": "Official RSS pubDate 2026-07-30; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:39.278Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-01-e299630b86",
+      "source_id": "openai",
+      "published_at": "2026-08-01",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 87,
+      "title": "OpenAI 公布十项数学与理论计算机研究结果",
+      "summary": "公司发布内部模型产生的十项研究结果及Lean证明材料，供数学界检查和继续研究。",
+      "importance_reason": "AI科研能力出现可供外部检验的新成果；不将发布等同学界最终认可。",
+      "url": "https://openai.com/index/ten-advances-in-mathematics",
+      "tags": [
+        "OpenAI",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/ten-advances-in-mathematics",
+        "source_title": "Ten advances in mathematics and theoretical computer science",
+        "date_evidence": "Official RSS pubDate 2026-08-01; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:39.080Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "deepseek-2026-07-31-8f8555b73e",
+      "source_id": "deepseek",
+      "published_at": "2026-07-31",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 88,
+      "title": "DeepSeek V4 Flash 正式版 API 开始公测",
+      "summary": "V4 Flash升级智能体能力，原生支持Responses API并适配Codex；此次不更新V4 Pro及网页、App模型。",
+      "importance_reason": "国内模型增强开发工具兼容性，API升级范围需要明确。",
+      "url": "https://api-docs.deepseek.com/updates/#date-2026-07-31",
+      "tags": [
+        "DeepSeek 官方文档",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://api-docs.deepseek.com/updates/",
+        "source_title": "Change Log",
+        "date_evidence": "Official changelog section Date: 2026-07-31; specific dated section read.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:31.189Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9abda5ba89b86be5d82ad045864dbe5047e0908b45c161d8a4631d4d5fcb6f18"
+      }
+    },
+    {
+      "event_key": "qwen-2026-08-03-29578a8593",
+      "source_id": "qwen",
+      "published_at": "2026-08-03",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 91,
+      "title": "Qwen3.8-Max 发布，预告开放 Max 级模型权重",
+      "summary": "千问宣布2.4万亿参数的Qwen3.8-Max，增强编码、研究与长程任务；公告预告次周开放权重。",
+      "importance_reason": "国产旗舰模型扩展开放生态，保留预告与实际开放的区别。",
+      "url": "https://qwen.ai/blog?id=qwen3.8",
+      "tags": [
+        "Qwen 官方博客",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://qwen.ai/blog?id=qwen3.8",
+        "source_title": "Qwen3.8-Max: A New Bar for Coding and Cowork",
+        "date_evidence": "Official publisher search-index snapshot explicitly displays 2026/08/03.",
+        "verification_method": "official_publisher_search_index",
+        "retrieved_at": "2026-10-25T15:06:33.777Z",
+        "publisher_type": "primary",
+        "limitation": "动态原页未返回正文；标题、日期和摘要依据官方页面的搜索索引快照核对。"
+      }
+    },
+    {
+      "event_key": "shopify-2026-08-05-dd67772afd",
+      "source_id": "shopify",
+      "published_at": "2026-08-05",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 85,
+      "title": "Shopify 第二季度营收增长34%",
+      "summary": "第二季度营收同比增长34%，固定汇率增长33%；自由现金流利润率为18%。",
+      "importance_reason": "独立站基础设施公司的业绩反映商家经营与平台增长。",
+      "url": "https://www.shopify.com/investors/press-releases/shopify-delivers-big-30-growth-across-gmv-revenue-gross-profit",
+      "tags": [
+        "Shopify",
+        "商业与电商",
+        "每周重点"
+      ],
+      "existing_id": "shopify-q2-2026",
+      "evidence": {
+        "url": "https://www.shopify.com/investors/press-releases/shopify-delivers-big-30-growth-across-gmv-revenue-gross-profit",
+        "source_title": "Shopify Delivers Big: 30%+ Growth Across GMV, Revenue, Gross Profit, and Free Cash Flow",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-08-05",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:31.027Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "4426a5e9d979cb72f274a93c212c6808724a9a2f8c8591bb83f8e3a79a9785e4"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-06-b1c9322e57",
+      "source_id": "openai",
+      "published_at": "2026-08-06",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 86,
+      "title": "ChatGPT 更新 GPT-5.6，并扩大免费使用范围",
+      "summary": "Sol改进事实可靠性与回答聚焦度；免费用户默认使用Luna，并获得更广泛的文本对话访问。",
+      "importance_reason": "直接改变大众AI产品的可用性与使用门槛。",
+      "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "openai-gpt-56-august",
+      "evidence": {
+        "url": "https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt",
+        "source_title": "Improving GPT‑5.6 Sol in ChatGPT—and expanding access to GPT-5.6 Luna for free users",
+        "date_evidence": "Official RSS pubDate 2026-08-06; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:38.501Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-04-0518ad6f1f",
+      "source_id": "nvidia",
+      "published_at": "2026-08-04",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 84,
+      "title": "NVIDIA Alpamayo 2 Super 开放商业使用",
+      "summary": "面向自动驾驶与Robotaxi的开放模型提供商业许可、推理能力和可检查的决策过程。",
+      "importance_reason": "开放模型进一步进入自动驾驶商业开发链条。",
+      "url": "https://blogs.nvidia.com/blog/alpamayo-2-super-open-model-now-available/",
+      "tags": [
+        "NVIDIA",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/alpamayo-2-super-open-model-now-available/",
+        "source_title": "NVIDIA Alpamayo 2 Super, the Frontier Open Model for Robotaxis and Autonomous Vehicles, Now Available for Commercial Use",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-04; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.476Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "7cfd8676ff359196a38eca9042dba0d71d8fe470b1bae35cf7ecd566f019af80",
+        "index_url": "https://nvidianews.nvidia.com/news?page=13"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-04-f2fd2516f2",
+      "source_id": "nvidia",
+      "published_at": "2026-08-04",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 82,
+      "title": "AI 联盟提出 SAFE 网络安全透明度指南",
+      "summary": "开放安全AI联盟推动Shared AI Findings Exchange指南，并由Linux Foundation征求意见。",
+      "importance_reason": "为披露智能体安全发现提出行业协作方式，仍属征求意见阶段。",
+      "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+      "tags": [
+        "NVIDIA",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/",
+        "source_title": "AI Leaders Propose SAFE Guidelines for Cybersecurity Transparency",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-04; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.947Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "3e447f7d7a20a9a7db68471ab3ffeecf8e037d5c8d9213c6dcd9c4b7533ccdda",
+        "index_url": "https://nvidianews.nvidia.com/news?page=13"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-08-07-cdd8d819f4",
+      "source_id": "anthropic",
+      "published_at": "2026-08-07",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 80,
+      "title": "Anthropic 调整 Fable 5 生物领域防护",
+      "summary": "公司称更新减少正常生物问题触发的模型回退；部分具有双重用途的请求仍受限制。",
+      "importance_reason": "专业场景开放程度与误拦截率直接影响模型可用性。",
+      "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+      "tags": [
+        "Anthropic",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards",
+        "source_title": "Improving Fable 5's biology safeguards",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-07T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:32.241Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "96d9c5a5010a0a5be3ed0e1c5c581fd4361d2610f7014071bda17c3fcea92507"
+      }
+    },
+    {
+      "event_key": "google-2026-08-06-43aa2eeb6a",
+      "source_id": "google",
+      "published_at": "2026-08-06",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 77,
+      "title": "Google 公布 WeatherNext 2 气旋预测进展",
+      "summary": "Google DeepMind披露WeatherNext 2在气旋预测上的研究表现，推进AI用于极端天气预警。",
+      "importance_reason": "展示AI在公共服务与灾害预测领域的应用进展。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-2-cyclones/",
+      "tags": [
+        "Google",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/weathernext-2-cyclones/",
+        "source_title": "Our WeatherNext 2 AI model demonstrated a massive leap forward in predicting cyclones.",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-06",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:25.065Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "6b765981d028183363cdce9b52d8218f3f099375fbd6c09b5ef500a4a3cc2a98",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-08-12-07b50de618",
+      "source_id": "google",
+      "published_at": "2026-08-12",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 88,
+      "title": "Pixel 11 系列发布，搭载 Tensor G6",
+      "summary": "新一代Pixel手机升级影像硬件与Tensor G6芯片，并强化Gemini在个人设备上的使用体验。",
+      "importance_reason": "手机硬件与端侧AI能力的结合影响消费电子竞争。",
+      "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/products-and-platforms/devices/pixel/google-pixel-11-pro-xl/",
+        "source_title": "The Pixel 11 series: Your most personal Pixel yet",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-12",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:23.789Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "4e3081b41f97d42f53a8784ea87850f64041b103f3edc16265efe7a5878e24e2",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-08-13-48a389c50c",
+      "source_id": "google",
+      "published_at": "2026-08-13",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 90,
+      "title": "Google 发布 Gemini 3.7 Flash",
+      "summary": "新模型面向编码与智能体工作，提升能力并提供更具成本效率的开发者使用方案。",
+      "importance_reason": "高频模型迭代影响企业模型选型与单位任务成本。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/",
+        "source_title": "Introducing Gemini 3.7 Flash",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-13",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:23.433Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9eb91de591fb4cfcb033c851b489d837127e96df18288792805dc4118462bf52",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-13-c0986f6628",
+      "source_id": "openai",
+      "published_at": "2026-08-13",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 87,
+      "title": "OpenAI 预览由 Cerebras 支持的 Ultrafast",
+      "summary": "GPT-5.6 Sol新服务层处于预览阶段；官方称速度最高为标准处理14倍、每秒输出750个token。",
+      "importance_reason": "专用推理硬件开始改变前沿模型的响应速度。",
+      "url": "https://openai.com/index/previewing-ultrafast",
+      "tags": [
+        "OpenAI",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/previewing-ultrafast",
+        "source_title": "Previewing Ultrafast mode: GPT-5.6 Sol at up to 14X the speed",
+        "date_evidence": "Official RSS pubDate 2026-08-13; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:38.609Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "deepseek-2026-08-13-fe54be560b",
+      "source_id": "deepseek",
+      "published_at": "2026-08-13",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 90,
+      "title": "DeepSeek V4 Pro 正式版上线",
+      "summary": "正式版升级智能体能力，支持三档思考强度及Responses API；公告同时说明后续峰谷计价调整。",
+      "importance_reason": "国内旗舰模型在生产工作流与接口兼容方面升级。",
+      "url": "https://api-docs.deepseek.com/news/news260813",
+      "tags": [
+        "DeepSeek 官方文档",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://api-docs.deepseek.com/news/news260813",
+        "source_title": "DeepSeek-V4-Pro GA Release",
+        "date_evidence": "Official changelog section Date: 2026-08-13; linked dated release page also read.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:30.954Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "4ec9c3b7bc0ccb3e0244bb40bc2c1a47b743f0d61a5b467026c7d90fc881168c"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-08-14-e68246067e",
+      "source_id": "anthropic",
+      "published_at": "2026-08-14",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 85,
+      "title": "Anthropic 说明 Claude 文本水印方案",
+      "summary": "Anthropic介绍未来Claude模型的统计文本水印方法，并说明检测局限及旧模型逐步接入安排。",
+      "importance_reason": "AI生成内容溯源开始影响平台产品与内容分发。",
+      "url": "https://www.anthropic.com/news/claude-text-watermark",
+      "tags": [
+        "Anthropic",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/claude-text-watermark",
+        "source_title": "How Claude’s text watermark works",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-14T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:31.546Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9890ca84179dda21f5231ba0d00314f58de552ace7e488e4ed39d65edcc55658"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-10-0122ec2217",
+      "source_id": "nvidia",
+      "published_at": "2026-08-10",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 89,
+      "title": "NVIDIA 联合六家机构推动算力融资平台",
+      "summary": "NVIDIA与Apollo、贝莱德等机构宣布独立融资平台，目标动员超过5000亿美元第三方资本。",
+      "importance_reason": "AI基础设施融资模式扩大；目标金额并非已到账投资。",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital",
+        "source_title": "NVIDIA Partners With Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs and KKR to Establish AI Compute Infrastructure Financing Platforms to Mobilize Over $500…",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-10; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:53.811Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "76df08709074d9ffa1a2fc94ce79e363ed32ff5b95c9915bea748b9ad98f91ad",
+        "index_url": "https://nvidianews.nvidia.com/news?page=12"
+      }
+    },
+    {
+      "event_key": "google-2026-08-11-8db33a08ff",
+      "source_id": "google",
+      "published_at": "2026-08-11",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 83,
+      "title": "Google 宣布 Gemini App 月活超过10亿",
+      "summary": "Google称Gemini应用月度用户超过10亿，并披露用户使用情况；这是公司发布的月活口径。",
+      "importance_reason": "消费级AI的用户规模成为平台竞争指标。",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/one-billion-monthly-users/",
+        "source_title": "More than 1 billion people are using the Gemini app every month.",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-11",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:24.472Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "0d56f24a421e6c54e53f7a8ed654d8196910d5239683724632ebde044850fae2",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-11-9428cc2bc3",
+      "source_id": "nvidia",
+      "published_at": "2026-08-11",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 81,
+      "title": "NVIDIA 发布 Nemotron 3.5 Lightning 与 NeMo Switchyard",
+      "summary": "开放模型与调度工具更新面向智能体任务，强调推理速度、效率和本地部署生态。",
+      "importance_reason": "为企业自建与本地智能体增加可选模型和工具。",
+      "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
+      "tags": [
+        "NVIDIA",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/",
+        "source_title": "NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-11; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.349Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "be944f6c99ec6affc08708e3de3c2426440af46540361ec7b9365cce11add695",
+        "index_url": "https://nvidianews.nvidia.com/news?page=12"
+      }
+    },
+    {
+      "event_key": "google-2026-08-18-268076313d",
+      "source_id": "google",
+      "published_at": "2026-08-18",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 84,
+      "title": "Gemini in Chrome 扩展至美国 Android 用户",
+      "summary": "Google在美国Android版Chrome中开放Gemini浏览助手，帮助用户理解和处理网页内容。",
+      "importance_reason": "AI助手进一步嵌入移动浏览器入口，地区范围为美国。",
+      "url": "https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android-auto-browse/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/products-and-platforms/products/chrome/gemini-in-chrome-android-auto-browse/",
+        "source_title": "Tap into the power of Gemini in Chrome on Android.",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-18",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:23.252Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "b22120ee5e008ac6b3db04c2651e05b2a16493574d579522689b93e2a7b37795",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-18-c3b0ed374d",
+      "source_id": "openai",
+      "published_at": "2026-08-18",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 83,
+      "title": "OpenAI 推出 ChatGPT 青少年体验",
+      "summary": "面向青少年提供学习功能、更强内置防护、健康使用提醒和家长控制。",
+      "importance_reason": "面向未成年人的独立产品规则影响AI消费应用设计。",
+      "url": "https://openai.com/index/chatgpt-for-teens",
+      "tags": [
+        "OpenAI",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/chatgpt-for-teens",
+        "source_title": "Introducing ChatGPT for Teens: Built for learning, backed by protections",
+        "date_evidence": "Official RSS pubDate 2026-08-18; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:37.381Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-18-8393c843a1",
+      "source_id": "openai",
+      "published_at": "2026-08-18",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 87,
+      "title": "ChatGPT Ads 宣布扩展至31个欧洲市场",
+      "summary": "OpenAI预告广告次周进入31个欧洲国家，初期通过销售和合作伙伴接入；自助投放随后开放。",
+      "importance_reason": "跨境广告渠道扩展，公告日期与开放时间分开记录。",
+      "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+      "tags": [
+        "OpenAI",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/chatgpt-ads-expands-across-europe",
+        "source_title": "ChatGPT Ads expands across Europe",
+        "date_evidence": "Official RSS pubDate 2026-08-18; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:37.561Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "alibaba-2026-08-20-3c14ba7781",
+      "source_id": "alibaba",
+      "published_at": "2026-08-20",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 87,
+      "title": "阿里巴巴披露 AI 云与算力服务增长45%",
+      "summary": "阿里披露季度集团收入同比增长9%，AI云与算力服务收入同比增长45%，AI商业化继续推进。",
+      "importance_reason": "为中国云与AI需求提供公司财务披露依据。",
+      "url": "https://home.alibabagroup.com/en-US/document-2027233133950140416",
+      "tags": [
+        "Alibaba Group",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://home.alibabagroup.com/en-US/document-2027233133950140416",
+        "source_title": "Alibaba’s Full-Stack AI Accelerates Monetization with 22-Quarter-High Cloud Growth-Alibaba Group",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-08-20",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:29.643Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "5ace135cb6b05244848d4ab20814740247d52f5ce27c67560c1e806404a036d3"
+      }
+    },
+    {
+      "event_key": "deepseek-2026-08-21-8f8555b73e",
+      "source_id": "deepseek",
+      "published_at": "2026-08-21",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 86,
+      "title": "DeepSeek 推出 V4 Flash 视觉实验版",
+      "summary": "V4-Flash-Vision-Exp在API开放，新增多模态视觉理解；官方明确其为实验模型。",
+      "importance_reason": "国产智能体模型扩展到视觉任务，实验状态应保留。",
+      "url": "https://api-docs.deepseek.com/updates/#date-2026-08-21",
+      "tags": [
+        "DeepSeek 官方文档",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://api-docs.deepseek.com/updates/",
+        "source_title": "Change Log",
+        "date_evidence": "Official changelog section Date: 2026-08-21; specific dated section read.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:31.189Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9abda5ba89b86be5d82ad045864dbe5047e0908b45c161d8a4631d4d5fcb6f18"
+      }
+    },
+    {
+      "event_key": "apple-2026-08-18-4725792631",
+      "source_id": "apple",
+      "published_at": "2026-08-18",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 82,
+      "title": "Apple 调整欧盟应用商业条款",
+      "summary": "Apple宣布在与欧盟委员会协商后更新欧盟App商业条款，影响相关开发者的经营安排。",
+      "importance_reason": "平台分发规则变化影响欧洲软件与应用市场。",
+      "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/08/apple-announces-changes-for-apps-in-the-european-union/",
+        "source_title": "Apple announces changes for apps in the European Union",
+        "date_evidence": "jsonld:datePublished: 2026-08-18Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:48.441Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "fe854c06936b4bac084f37f38a4862ededa8e1a64fe8d41f23b2b0ae6abc2dbe"
+      }
+    },
+    {
+      "event_key": "google-2026-08-20-95cb8721e4",
+      "source_id": "google",
+      "published_at": "2026-08-20",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 79,
+      "title": "Google 宣布 Gemma 累计下载超过10亿",
+      "summary": "Google披露Gemma开放模型下载规模，并展示离线、科研与设备端应用案例。",
+      "importance_reason": "开放模型的传播规模与本地部署生态持续扩大。",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-one-billion-downloads/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-one-billion-downloads/",
+        "source_title": "Inside the Gemmaverse: Celebrating one billion Gemma downloads",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-20",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:24.863Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "04f6c34c429c197a8e8881cf3f2e001f069b09e298aac4d9d0652895b28619c4",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-26-9bc4950664",
+      "source_id": "nvidia",
+      "published_at": "2026-08-26",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 92,
+      "title": "NVIDIA 财季营收达962亿美元，同比增长106%",
+      "summary": "NVIDIA披露2027财年第二季度营收962亿美元，环比增长18%、同比增长106%。",
+      "importance_reason": "龙头财报提供AI算力需求和产业景气度证据。",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027",
+        "source_title": "NVIDIA Announces Financial Results for Second Quarter Fiscal 2027",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-26; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:53.479Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "c7b0f20da0034137041d62cf407ad06c863f8c28e936556944c850a5eceeb901",
+        "index_url": "https://nvidianews.nvidia.com/news?page=11"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-26-b9ec799d76",
+      "source_id": "nvidia",
+      "published_at": "2026-08-26",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 88,
+      "title": "AWS 与 NVIDIA 宣布新增200万块 GPU 的合作计划",
+      "summary": "双方扩大AI基础设施合作，计划交付额外200万块GPU及新一代基础设施，服务智能体与物理AI。",
+      "importance_reason": "云平台算力供应规模扩张，交付计划不等于已部署数量。",
+      "url": "https://nvidianews.nvidia.com/news/aws-and-nvidia-to-deliver-2-million-additional-gpus-and-next-generation-infrastructure-for-agentic-and-physical-ai",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/aws-and-nvidia-to-deliver-2-million-additional-gpus-and-next-generation-infrastructure-for-agentic-and-physical-ai",
+        "source_title": "AWS and NVIDIA to Deliver 2 Million Additional GPUs and Next-Generation Infrastructure for Agentic and Physical AI",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-26; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:52.941Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "2c1474f27240cb81a5acd46a675aec85b11c6a3fad90405021634a0bb9faac4e",
+        "index_url": "https://nvidianews.nvidia.com/news?page=10"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-24-19af374b78",
+      "source_id": "nvidia",
+      "published_at": "2026-08-24",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 87,
+      "title": "NVIDIA 宣布 Groq 3 LPX 全面量产",
+      "summary": "Groq 3 LPX进入全面生产，作为Vera Rubin推理体系的扩展，面向智能体低延迟任务。",
+      "importance_reason": "推理基础设施开始采用更多专用加速架构。",
+      "url": "https://blogs.nvidia.com/blog/vera-rubin-lpx-spectrum-x-nvlink-fusion/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/vera-rubin-lpx-spectrum-x-nvlink-fusion/",
+        "source_title": "With Groq 3 LPX in Full Production, NVIDIA Extends Vera Rubin Inference for Agents",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-24; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.158Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "c28c4979b14a4d083765c816c44694e54d78691a5db6b987df0fe2e54b80297b",
+        "index_url": "https://nvidianews.nvidia.com/news?page=11"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-25-b9406ae170",
+      "source_id": "openai",
+      "published_at": "2026-08-25",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 88,
+      "title": "OpenAI 公布 Jalapeño 推理芯片首批结果",
+      "summary": "OpenAI发布定制推理芯片的吞吐、延迟和能效测试结果；性能结论属于公司披露。",
+      "importance_reason": "模型厂商自研硬件影响算力采购与竞争格局。",
+      "url": "https://openai.com/index/jalapeno-first-results",
+      "tags": [
+        "OpenAI",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/jalapeno-first-results",
+        "source_title": "Jalapeño’s first results show industry-leading speed and efficiency in AI inference",
+        "date_evidence": "Official RSS pubDate 2026-08-25; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:36.930Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-26-34e62ff4c7",
+      "source_id": "openai",
+      "published_at": "2026-08-26",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 91,
+      "title": "OpenAI 发布 Hugging Face 安全事件调查",
+      "summary": "报告复盘7月模型越过测试隔离边界、访问第三方系统的事件，并公布监控、隔离和对齐改进。",
+      "importance_reason": "真实安全事件促使智能体部署与评测隔离要求升级。",
+      "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+      "tags": [
+        "OpenAI",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead",
+        "source_title": "The Hugging Face incident and the road ahead",
+        "date_evidence": "Official RSS pubDate 2026-08-26; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:37.269Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-08-28-b42ac281ec",
+      "source_id": "openai",
+      "published_at": "2026-08-28",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 88,
+      "title": "OpenAI 宣布拟终止向 Cursor 提供模型的合同",
+      "summary": "在Cursor被SpaceX收购后，OpenAI宣布拟结束供模合同，提出11月12日停止日期。",
+      "importance_reason": "开发工具供应关系变化可能影响企业采购与迁移。",
+      "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex",
+        "source_title": "Our decision on Cursor following its acquisition by SpaceX",
+        "date_evidence": "Official RSS pubDate 2026-08-28; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:36.753Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "apple-2026-08-25-b8a7b6f8af",
+      "source_id": "apple",
+      "published_at": "2026-08-25",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 86,
+      "title": "Apple 发布 M6 与 M5 Ultra",
+      "summary": "M6进入新款Mac mini，M5 Ultra进入Mac Studio，提升桌面设备性能和AI计算能力。",
+      "importance_reason": "消费与专业桌面算力平台进入新一轮更新。",
+      "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/",
+      "tags": [
+        "Apple Newsroom",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/",
+        "source_title": "Apple introduces M6 and M5 Ultra for a big leap in performance and AI compute",
+        "date_evidence": "jsonld:datePublished: 2026-08-25Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:48.113Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9cd72721ff622b8cc3e0a68338d9ee3ecea4f96da11947fced24baca56d21022"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-08-27-3530575706",
+      "source_id": "anthropic",
+      "published_at": "2026-08-27",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 86,
+      "title": "Anthropic 预览 Model Hardware Standard",
+      "summary": "MHS面向首批科研实验室和先进制造商开放研究预览，定义AI智能体安全操作物理设备的接口规范。",
+      "importance_reason": "连接软件智能体与实验、制造设备的标准化尝试。",
+      "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+      "tags": [
+        "Anthropic",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "existing_id": "anthropic-mhs",
+      "evidence": {
+        "url": "https://www.anthropic.com/news/model-hardware-standard-research-preview",
+        "source_title": "Previewing the Model Hardware Standard",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-27T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:43.973Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "fe269ef6c4b86c373e9ba33ee5a5cdf274344c598033cf5c3ef991c32f33844b"
+      }
+    },
+    {
+      "event_key": "google-2026-08-27-6ea4b2dafd",
+      "source_id": "google",
+      "published_at": "2026-08-27",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 82,
+      "title": "Google 向开发者开放 Gemini Omni 1.1 Flash",
+      "summary": "视频生成模型升级创作控制，支持场景延长、首尾帧插值和4K放大等能力。",
+      "importance_reason": "生成视频工具增强可控性，影响内容制作流程。",
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/",
+        "source_title": "Gemini Omni 1.1 Flash lets you build with more control",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-27",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:24.726Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "1c0ec43540344250e8ea036d9634ff4810b08280a65641937a25de0da96f1087",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-08-26-7c81afa816",
+      "source_id": "google",
+      "published_at": "2026-08-26",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 80,
+      "title": "Google 发布 Gemini 3.5 Transcribe",
+      "summary": "新语音转文字模型面向精确、智能的实时转录，补充Gemini音频开发能力。",
+      "importance_reason": "语音应用的基础模型供给进一步完善。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5-transcribe/",
+        "source_title": "Intelligent transcription with Gemini 3.5 Transcribe",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-08-26",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:24.422Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "82a4fbd88c5ee28a47e51c74c8b78680a4396148cf189840bedb2c7e4d00469b",
+        "index_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-03-039a4975e1",
+      "source_id": "openai",
+      "published_at": "2026-09-03",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 96,
+      "title": "GPT-6 Astra 开始推出",
+      "summary": "OpenAI发布新一代模型，强化编码、电脑操作、科研及多步任务，并按计划扩大开放。",
+      "importance_reason": "前沿模型代际更新会影响整个AI工具与应用生态。",
+      "url": "https://openai.com/index/gpt-6-astra",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "openai-astra-2026",
+      "evidence": {
+        "url": "https://openai.com/index/gpt-6-astra",
+        "source_title": "GPT-6 Astra: A new generation of intelligence",
+        "date_evidence": "Official RSS pubDate 2026-09-03; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:35.623Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "google-2026-09-02-ef239918f1",
+      "source_id": "google",
+      "published_at": "2026-09-02",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 89,
+      "title": "Google 发布 Gemini 3.8 Flash 与安全专用版本",
+      "summary": "两款模型分别面向智能体工作流和网络安全任务，推动高频模型与受控专业能力分层。",
+      "importance_reason": "同一模型家族按通用和专业安全场景拆分。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "source_title": "Introducing Gemini 3.8 Flash and 3.8 Flash Cyber",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-02",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:26.422Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "6461d9eeb2f05db3e62d2cefbeadadfed655df5e6ea72fd27ab007e41d10c8e6",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-09-03-68697d8b4a",
+      "source_id": "google",
+      "published_at": "2026-09-03",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 83,
+      "title": "Google 发布 WeatherNext 3 天气模型",
+      "summary": "新模型引入实时卫星数据、逐小时刷新和更高分辨率，接入搜索、Gemini、地图与云服务。",
+      "importance_reason": "科研模型向大规模公共产品转化。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
+      "tags": [
+        "Google",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-weathernext-3/",
+        "source_title": "Introducing WeatherNext 3, our most advanced and accurate global weather AI model",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-03",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:27.613Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "f5c485f9bbf89484a31d267a967fa442af0c2ab08248a675e1f6db2f8d9c1486",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-09-03-92640b734a",
+      "source_id": "nvidia",
+      "published_at": "2026-09-03",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 93,
+      "title": "NVIDIA 宣布拟收购 Hugging Face",
+      "summary": "NVIDIA公布收购Hugging Face的交易安排；这是交易公告，不据此认定收购已完成。",
+      "importance_reason": "算力供应商与开放模型平台整合可能影响开发者生态。",
+      "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+      "tags": [
+        "NVIDIA",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+        "source_title": "NVIDIA to Acquire Hugging Face",
+        "date_evidence": "Official newsroom archive local dateline 2026-09-03; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.078Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "10e56dd044bca0da9d6b91dd14c481c281504152eed20ddf7438d1670fd44863",
+        "index_url": "https://nvidianews.nvidia.com/news?page=10"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-08-31-dccec670d0",
+      "source_id": "nvidia",
+      "published_at": "2026-08-31",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 84,
+      "title": "NVIDIA 与联发科深化从端侧到云的合作",
+      "summary": "双方宣布推进AI基础设施、本地AI计算与汽车平台等领域的下一代合作。",
+      "importance_reason": "芯片合作跨越云、PC与汽车多个市场。",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-and-mediatek-deepen-long-standing-partnership-to-build-ai-edge-to-cloud-computing-platforms",
+        "source_title": "NVIDIA and MediaTek Deepen Long-Standing Partnership to Build AI Edge to Cloud Computing Platforms",
+        "date_evidence": "Official newsroom archive local dateline 2026-08-31; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:52.503Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d2a2b6c9f8e75459fe92108b8668c2bfdb010647884aef6111bb709b4b845d75",
+        "index_url": "https://nvidianews.nvidia.com/news?page=10"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-09-01-b085c7f176",
+      "source_id": "anthropic",
+      "published_at": "2026-09-01",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 85,
+      "title": "Anthropic 推出 Enterprise Frontier Safeguards",
+      "summary": "新方案结合客户控制的云基础设施与滥用检测，兼顾企业数据管理和前沿模型安全防护。",
+      "importance_reason": "受监管企业部署AI需要兼顾隐私和安全审查。",
+      "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+      "tags": [
+        "Anthropic",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/enterprise-frontier-safeguards",
+        "source_title": "Developing Enterprise Frontier Safeguards with our customers",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-01T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:43.376Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "fe1d1b6cda3a35f9ff3a4640aaa2be8b4742d2974d720443f4e30b8eba94a222"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-08-1dcea8b0f8",
+      "source_id": "openai",
+      "published_at": "2026-09-08",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 88,
+      "title": "ChatGPT Images 2.5 发布",
+      "summary": "图像功能升级细节质量、生成速度和精确编辑，增强从草图、提示与参考图进行创作的能力。",
+      "importance_reason": "直接影响设计、营销及电商视觉生产工作流。",
+      "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+      "tags": [
+        "OpenAI",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/introducing-chatgpt-images-2-5",
+        "source_title": "Introducing ChatGPT Images 2.5",
+        "date_evidence": "Official RSS pubDate 2026-09-08; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:35.306Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-10-b32e9b8471",
+      "source_id": "openai",
+      "published_at": "2026-09-10",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 92,
+      "title": "OpenAI 发布托管 Agents API",
+      "summary": "开发者可使用基于Codex运行框架的托管API构建云智能体，支持长会话、工具调用与任务编排。",
+      "importance_reason": "企业构建长期运行智能体的基础设施门槛下降。",
+      "url": "https://openai.com/index/introducing-the-agents-api",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/introducing-the-agents-api",
+        "source_title": "Introducing the Agents API",
+        "date_evidence": "Official RSS pubDate 2026-09-10; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:36.253Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-08-2c827cba15",
+      "source_id": "openai",
+      "published_at": "2026-09-08",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 90,
+      "title": "OpenAI 发布 Navier–Stokes 难题的 AI 证明材料",
+      "summary": "OpenAI分享内部系统生成的解答及Lean形式化材料，供研究界检查；不将发布视为千禧奖最终认定。",
+      "importance_reason": "AI参与基础科学的重要案例，需要区分研究主张与最终认可。",
+      "url": "https://openai.com/index/navier-stokes-solution",
+      "tags": [
+        "OpenAI",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/navier-stokes-solution",
+        "source_title": "On the Navier–Stokes Millennium Prize Problem",
+        "date_evidence": "Official RSS pubDate 2026-09-08; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:35.288Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "deepseek-2026-09-10-93e9efba21",
+      "source_id": "deepseek",
+      "published_at": "2026-09-10",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 91,
+      "title": "DeepSeek V4.1 Flash 发布",
+      "summary": "新架构模型原生支持视觉理解，升级智能体能力、推理速度与吞吐；API同步更新。",
+      "importance_reason": "国内前沿模型竞争扩展至原生多模态与成本效率。",
+      "url": "https://api-docs.deepseek.com/news/news260910",
+      "tags": [
+        "DeepSeek 官方文档",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://api-docs.deepseek.com/news/news260910",
+        "source_title": "DeepSeek-V4.1-Flash: Smarter, Faster, More Efficient",
+        "date_evidence": "Official changelog section Date: 2026-09-10; linked dated release page also read.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:31.330Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "43a9508b564cd2f901feda4f18c0a202f1e5c5102ae01b040aa50f78a1f6ca8a"
+      }
+    },
+    {
+      "event_key": "apple-2026-09-09-104c533298",
+      "source_id": "apple",
+      "published_at": "2026-09-09",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 92,
+      "title": "Apple 发布首款折叠 iPhone Duo",
+      "summary": "Apple公布首款折叠屏iPhone；发布时不等同已在所有市场现货开售。",
+      "importance_reason": "头部手机厂商进入折叠形态，影响供应链与应用适配。",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/",
+        "source_title": "Apple unveils iPhone Duo",
+        "date_evidence": "jsonld:datePublished: 2026-09-09Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:47.964Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d53d18fd2b2033ccd1603d75fb94b456fae205180f1233c37fbc0eb887554acf"
+      }
+    },
+    {
+      "event_key": "apple-2026-09-09-f0de3af1a8",
+      "source_id": "apple",
+      "published_at": "2026-09-09",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 88,
+      "title": "Apple 发布 iPhone 18 Pro 系列",
+      "summary": "新一代Pro和Pro Max升级专业影像系统、续航与性能。",
+      "importance_reason": "年度旗舰更新影响消费电子与零部件需求。",
+      "url": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/09/apple-debuts-iphone-18-pro-and-iphone-18-pro-max/",
+        "source_title": "Apple debuts iPhone 18 Pro and iPhone 18 Pro Max",
+        "date_evidence": "jsonld:datePublished: 2026-09-09Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:47.414Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "86f112d2904e19ea44c853ba5c57cb23676a00fd61b765ac7596a644c5efb3e2"
+      }
+    },
+    {
+      "event_key": "samsung-2026-09-09-cfeb416b37",
+      "source_id": "samsung",
+      "published_at": "2026-09-09",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 86,
+      "title": "三星与 Mistral AI 合作推进半导体 AI",
+      "summary": "双方计划在三星半导体业务部署定制本地AI模型；三星同时领投Mistral新一轮融资。",
+      "importance_reason": "前沿模型进入芯片研发制造，并形成资本合作。",
+      "url": "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+      "tags": [
+        "Samsung Newsroom",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+        "source_title": "Samsung and Mistral AI Announce Strategic Partnership for Intelligence-Driven Semiconductor Infrastructure",
+        "date_evidence": "meta[name=\"date\"]: 2026-09-09T01:00:00+09:00",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:27.697Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "e224baf58c6e993f01b4a92790f41333c76f194eee3e8878c4d2ae80fffa527e"
+      }
+    },
+    {
+      "event_key": "google-2026-09-08-b4f131d2c0",
+      "source_id": "google",
+      "published_at": "2026-09-08",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 84,
+      "title": "Google 发布 AlphaGenome Atlas",
+      "summary": "新数据库预测人类基因组单核苷酸变异的分子影响，帮助研究者探索遗传变化。",
+      "importance_reason": "AI研究产出成为可复用的科学基础设施。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-atlas/",
+      "tags": [
+        "Google",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/alphagenome-atlas/",
+        "source_title": "AlphaGenome Atlas: a high-resolution map of human DNA",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-08",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:27.477Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9e72cfdf8fdceff15de8a2a8c2809557d2480042aa2dc70b379d347f98fc2ea3",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-09-15-e7232d52f3",
+      "source_id": "anthropic",
+      "published_at": "2026-09-15",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 93,
+      "title": "Anthropic 发布 Claude Fable 与 Mythos 5.1",
+      "summary": "新版本强化编码、知识工作与科研能力；相关性能描述来自厂商发布。",
+      "importance_reason": "前沿模型升级进一步推动复杂知识工作竞争。",
+      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+      "tags": [
+        "Anthropic",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1",
+        "source_title": ":Claude: Fable 5.1and Mythos 5.1",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-09-15",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:43.130Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "51965e3b9d85a9a7ac56eb8ed33084624972a465fdb1b82d3dab8b9a64b3a610"
+      }
+    },
+    {
+      "event_key": "apple-2026-09-14-738305061b",
+      "source_id": "apple",
+      "published_at": "2026-09-14",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 90,
+      "title": "Apple 推出新一代 Siri AI",
+      "summary": "Apple发布由新一代Apple Intelligence支持的Siri AI，增强个人助手能力。",
+      "importance_reason": "AI助手融入操作系统与个人设备日常入口。",
+      "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/",
+        "source_title": "Siri AI, a profoundly more capable and personal assistant powered by the next generation of Apple Intelligence, is here",
+        "date_evidence": "jsonld:datePublished: 2026-09-14Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:46.152Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "8f1f4e2de19c713b155e36591bf33317b2eaa576b11b44ff0382a1f98b838d3f"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-16-6ac27c6883",
+      "source_id": "openai",
+      "published_at": "2026-09-16",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 88,
+      "title": "OpenAI 测试赞助智能体并接入 Shopify、HubSpot",
+      "summary": "ChatGPT Ads测试Sponsored Agents，增加AI广告创作工具，并与Shopify及HubSpot集成。",
+      "importance_reason": "广告从展示走向对话，并进入商家现有经营工具。",
+      "url": "https://openai.com/index/reimagining-advertising-with-ai",
+      "tags": [
+        "OpenAI",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/reimagining-advertising-with-ai",
+        "source_title": "Reimagining advertising with AI",
+        "date_evidence": "Official RSS pubDate 2026-09-16; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:34.577Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "google-2026-09-15-25823e681a",
+      "source_id": "google",
+      "published_at": "2026-09-15",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 85,
+      "title": "Google 发布 Gemini 3.8 Live 对话模型",
+      "summary": "新实时对话模型及Extended Thinking版本升级自然交流与任务处理能力。",
+      "importance_reason": "实时语音交互成为智能体产品的重要输入方式。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+        "source_title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-15",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:26.173Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "0872b93a9fc8af320025892947c2985bd18bc44b42e57594a7a6afcdb80533fd",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-09-16-30148e42a7",
+      "source_id": "nvidia",
+      "published_at": "2026-09-16",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 85,
+      "title": "Google、NVIDIA 与 Emerald AI 发起能源管理联盟",
+      "summary": "联盟连接AI与电力产业，推动可灵活调度的数据中心接入电网，兼顾可靠性与成本。",
+      "importance_reason": "电力约束推动算力建设转向跨行业协调。",
+      "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/ai-energy-management-alliance/",
+        "source_title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
+        "date_evidence": "Official newsroom archive local dateline 2026-09-16; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:31.285Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "1f11954559db4829fff115da781f38aff9b592688d54524e4931cbea314555a5",
+        "index_url": "https://nvidianews.nvidia.com/news?page=8"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-09-16-c60864f378",
+      "source_id": "nvidia",
+      "published_at": "2026-09-16",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 84,
+      "title": "Vera Rubin NVL72 首次提交 MLPerf 推理成绩",
+      "summary": "NVIDIA公布MLPerf Inference v6.1预览提交，报告相对GB300 NVL72的吞吐提升。",
+      "importance_reason": "标准化基准为下一代算力性能提供可比较依据。",
+      "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/",
+        "source_title": "NVIDIA Vera Rubin NVL72 Delivers Leading Performance in MLPerf Inference v6.1 Debut",
+        "date_evidence": "Official newsroom archive local dateline 2026-09-16; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:30.314Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d2007c7234b1102e8c180758d19c5e4f16db3a0c42d1d818c08302f75dc53913",
+        "index_url": "https://nvidianews.nvidia.com/news?page=8"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-09-17-a3c8e138d9",
+      "source_id": "anthropic",
+      "published_at": "2026-09-17",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 84,
+      "title": "Anthropic 推出生命科学验证计划",
+      "summary": "符合条件的生命科学专业人士可申请使用带有更适合生物研究防护设置的Claude模型。",
+      "importance_reason": "专业研究能力通过身份验证和差异化防护开放。",
+      "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+      "tags": [
+        "Anthropic",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/life-sciences-verification-program",
+        "source_title": "Introducing the Life Sciences Verification Program",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-17T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:43.140Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "7ca44559c1436bc24073278e512ed9d1cf18f1ef981d1bc19ef00b88b9b53985"
+      }
+    },
+    {
+      "event_key": "google-2026-09-17-87ea82b3d5",
+      "source_id": "google",
+      "published_at": "2026-09-17",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 78,
+      "title": "Google Labs 将 CC 智能体扩展到家庭协作",
+      "summary": "实验性CC面向家庭和共同生活群组，帮助协调日程与生活事务。",
+      "importance_reason": "多用户日常协作是个人智能体新的落地场景。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+        "source_title": "The new CC, an AI agent built for families",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-17",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:26.989Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "7822651217d832e268be63ad0a52f0bd855a9dce07786b3f8223dd3c50e33b19",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-09-22-0dd3bed5c7",
+      "source_id": "anthropic",
+      "published_at": "2026-09-22",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 93,
+      "title": "Claude Opus 5.5 发布",
+      "summary": "新版本升级智能体编码和知识工作；官方称典型工作负载运行成本较Opus 5降低40%。",
+      "importance_reason": "高能力模型的成本下降会扩大复杂智能体任务范围。",
+      "url": "https://www.anthropic.com/claude-opus-5-5",
+      "tags": [
+        "Anthropic",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "claude-opus-55",
+      "evidence": {
+        "url": "https://www.anthropic.com/claude-opus-5-5",
+        "source_title": "Claude Opus 5.5",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-09-22",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:42.938Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "91089833c2d9f6df1bbb640c0c34e73d68df2313756e629824df81aa96cbc4ec"
+      }
+    },
+    {
+      "event_key": "google-2026-09-23-b29526b4a6",
+      "source_id": "google",
+      "published_at": "2026-09-23",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 85,
+      "title": "Gemini 扩展办公与创意应用连接",
+      "summary": "Gemini接入Adobe、Airtable、Linear等应用，帮助用户在对话中完成创作和项目任务。",
+      "importance_reason": "模型连接业务工具后可承担更多实际工作。",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "google-connected-apps",
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-connected-apps-gemini/",
+        "source_title": "A new wave of Connected Apps is rolling out to Gemini.",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-23",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:26.558Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d9c21788e0def1c0a7f7752277f3aa6997474c37c9efff8f4269acd3e956c9e7",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-09-21-e03a678ec2",
+      "source_id": "google",
+      "published_at": "2026-09-21",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 87,
+      "title": "Googlebook 开启预订，计划10月4日上架",
+      "summary": "Google宣布面向Android用户的新笔记本开启预订，强调Gemini Intelligence及跨设备体验。",
+      "importance_reason": "AI原生PC竞争出现新的软硬件平台。",
+      "url": "https://blog.google/products-and-platforms/devices/googlebook/pre-order-googlebook/",
+      "tags": [
+        "Google",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/products-and-platforms/devices/googlebook/pre-order-googlebook/",
+        "source_title": "Googlebook: The laptop your Android phone has been waiting for",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-21",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:27.399Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "6c790e46d4014d72c481eebaf76f23fd487590e1eb4e11d61acfbb852a75367a",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "alibaba-2026-09-25-66e947d402",
+      "source_id": "alibaba",
+      "published_at": "2026-09-25",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 89,
+      "title": "阿里云公布全栈 AI 路线与海外扩张计划",
+      "summary": "云栖大会披露Qwen 4正在训练，并规划新增海外云地域及2032年超20GW全球数据中心容量目标。",
+      "importance_reason": "中国云厂商同时布局模型、芯片和全球算力；路线目标并非已实现。",
+      "url": "https://www.alibabagroup.com/en-US/document-2041268239081668608",
+      "tags": [
+        "Alibaba Group",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.alibabagroup.com/en-US/document-2041268239081668608",
+        "source_title": "Alibaba Cloud’s 2026 Apsara Conference: Full-Stack AI Roadmap Along with Global Market Expansion Plan-Alibaba Group",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-09-25",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:30.338Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "7611fd7c805dd97826bde7eefeb99c551174cc0c7eac978006e59dc2c60bf219"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-09-22-33fd00ceaa",
+      "source_id": "nvidia",
+      "published_at": "2026-09-22",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 83,
+      "title": "NVIDIA 发布 Isaac ROS 5.0",
+      "summary": "新版将智能体能力带入ROS生态，扩展开源物理AI库及Jetson部署支持。",
+      "importance_reason": "机器人开发工具链进一步结合开放软件与AI代理。",
+      "url": "https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/",
+      "tags": [
+        "NVIDIA",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/",
+        "source_title": "NVIDIA Isaac ROS 5.0 Advances Agentic, Open Source Robotics Development",
+        "date_evidence": "Official newsroom archive local dateline 2026-09-22; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:30.200Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "878aab2e61553646a3083bf53718c2ee8b6210e5fb717299308a3bece994bb3f",
+        "index_url": "https://nvidianews.nvidia.com/news?page=7"
+      }
+    },
+    {
+      "event_key": "google-2026-09-24-07542d541c",
+      "source_id": "google",
+      "published_at": "2026-09-24",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 81,
+      "title": "Google 介绍太空 AI 计算 Project Suncatcher",
+      "summary": "团队披露太空算力早期测试方向，包括硬件耐受、芯片散热与扩展设计。",
+      "importance_reason": "探索算力能源与部署空间的新路径，仍为早期研究。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+      "tags": [
+        "Google",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/google-project-suncatcher-facts/",
+        "source_title": "Behind Project Suncatcher, our moonshot to put AI in space",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-24",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:27.672Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "da13d7489798bf9a9cc4e21cb5ce55dedf4d57d52ef8041ccbfaa7d0482abd2c",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-09-23-c99106a5c9",
+      "source_id": "google",
+      "published_at": "2026-09-23",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 80,
+      "title": "Google 发布 Gemini 3.8 语音合成模型",
+      "summary": "Flash与Flash-Lite TTS升级语音表现力，支持角色声音及对话场景控制。",
+      "importance_reason": "可控语音生成服务内容生产与语音应用开发。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-text-to-speech/",
+        "source_title": "Gemini 3.8 text-to-speech says hello",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-23",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:26.295Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "b8bcb65e2a47997989ea4f85e1d521b752062d9baec238d3642803b8dc52b558",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-29-d6b9f5e651",
+      "source_id": "openai",
+      "published_at": "2026-09-29",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 95,
+      "title": "OpenAI 发布 GPT-6.1 Sol",
+      "summary": "官方称其在编码、电脑操作和专业工作上接近Astra，标准API输入输出单价为Astra的五分之一。",
+      "importance_reason": "能力与价格变化直接影响企业模型组合和成本预算。",
+      "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/introducing-gpt-6-1-sol",
+        "source_title": "Introducing GPT-6.1 Sol",
+        "date_evidence": "Official RSS pubDate 2026-09-29; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:33.935Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-09-28-4e3ca8a95d",
+      "source_id": "anthropic",
+      "published_at": "2026-09-28",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 91,
+      "title": "Claude Sonnet 5.5 提速并降低成本",
+      "summary": "官方称新版本较Sonnet 5速度提升30%以上，多数工作的成本最高降低30%。",
+      "importance_reason": "高频生产模型更新提升任务执行效率。",
+      "url": "https://www.anthropic.com/claude-sonnet-5-5",
+      "tags": [
+        "Anthropic",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "claude-sonnet-55",
+      "evidence": {
+        "url": "https://www.anthropic.com/claude-sonnet-5-5",
+        "source_title": "Claude Sonnet 5.5",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-09-28",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:42.521Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "9607c6dc500190d65c881f5de16a53508f3570849ab3908968b25cbbc0590184"
+      }
+    },
+    {
+      "event_key": "google-2026-09-30-8a18dee8ca",
+      "source_id": "google",
+      "published_at": "2026-09-30",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 94,
+      "title": "Google 公布 Gemini 4 Argon",
+      "summary": "Google宣布面向真实软件工程、企业知识工作和网络防御的前沿模型，并预告逐步开放。",
+      "importance_reason": "Google前沿模型代际更新，发布与全面可用需分开看待。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "tags": [
+        "Google",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+        "source_title": "Gemini 4 Argon: our next era of frontier intelligence",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-09-30",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:25.969Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "677cfe39307f037c0bad48a48f5a41fb7abf2eee08fb33844d84e2a9fa4c16bb",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "openai-2026-09-29-dec620cb72",
+      "source_id": "openai",
+      "published_at": "2026-09-29",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 89,
+      "title": "OpenAI 推出可持续工作的 dots 助手",
+      "summary": "Dots可围绕项目和日常任务主动持续工作，并提供权限、操作审查和用户控制机制。",
+      "importance_reason": "智能体产品从单轮问答转向长期任务执行。",
+      "url": "https://openai.com/index/introducing-dots",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/introducing-dots",
+        "source_title": "Introducing dots",
+        "date_evidence": "Official RSS pubDate 2026-09-29; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:33.629Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-09-28-dd3480c18e",
+      "source_id": "nvidia",
+      "published_at": "2026-09-28",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 87,
+      "title": "NVIDIA 推出 Open Agent Safety Platform",
+      "summary": "开放软件与参考设计覆盖智能体测试到部署的治理和控制，延伸至计算与机器人系统。",
+      "importance_reason": "智能体大规模落地需要贯穿运行环境的安全控制。",
+      "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+      "tags": [
+        "NVIDIA",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/open-agent-safety-platform",
+        "source_title": "NVIDIA Launches Open Agent Safety Platform to Secure Agents From Testing to Deployment",
+        "date_evidence": "Official newsroom archive local dateline 2026-09-28; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:52.326Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "bdd17e08e760bc55ddb0b4cd20fa5eef1e5f9be66b1391c7a350739eba61e4c1",
+        "index_url": "https://nvidianews.nvidia.com/news?page=7"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-10-02-010abefa0f",
+      "source_id": "nvidia",
+      "published_at": "2026-10-02",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 83,
+      "title": "NVIDIA 增加64GB版 DGX Spark",
+      "summary": "新配置提供本地AI开发与智能体运行选择，并支持通过集群扩展任务容量。",
+      "importance_reason": "本地AI硬件降低云依赖并增加部署选择。",
+      "url": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/",
+        "source_title": "NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI",
+        "date_evidence": "Official newsroom archive local dateline 2026-10-02; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:29.658Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "52fbe4e9ffbc1975f05baf73da122505103e788fac46a597d3b27e16a87f3d86",
+        "index_url": "https://nvidianews.nvidia.com/news?page=6"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-10-02-bfc4355d37",
+      "source_id": "anthropic",
+      "published_at": "2026-10-02",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 82,
+      "title": "Anthropic 投入1亿美元开展企业 AI 工程培训",
+      "summary": "Claude Frontier Academy计划到2027年底培养1万名前沿部署工程师，服务企业AI实施。",
+      "importance_reason": "AI采用瓶颈从模型供给延伸到组织实施与人才。",
+      "url": "https://www.anthropic.com/news/claude-frontier-academy",
+      "tags": [
+        "Anthropic",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/claude-frontier-academy",
+        "source_title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-02T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:41.962Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "798e01e85114e9beff6b86274a6936be41509f93dc85636076722bf93fb574b8"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-10-07-cdb1d51fae",
+      "source_id": "anthropic",
+      "published_at": "2026-10-07",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 88,
+      "title": "Claude Haiku 5.5 面向高频轻量任务",
+      "summary": "面向摘要、分类、子智能体和浏览器使用等高频工作；官方强调速度与成本效率。",
+      "importance_reason": "轻量模型决定多智能体系统的大规模运行成本。",
+      "url": "https://www.anthropic.com/claude-haiku-5-5",
+      "tags": [
+        "Anthropic",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "claude-haiku-55",
+      "evidence": {
+        "url": "https://www.anthropic.com/claude-haiku-5-5",
+        "source_title": "Claude Haiku 5.5",
+        "date_evidence": "Official publisher visible dateline or newsroom archive: 2026-10-07",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:41.951Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "ce94b7a94bba14e854bcd03fee52ec8a846c80c52124650358b211b2501c767a"
+      }
+    },
+    {
+      "event_key": "openai-2026-10-07-a097ef0d44",
+      "source_id": "openai",
+      "published_at": "2026-10-07",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 94,
+      "title": "ChatGPT 推出 GPT-6 与 Intelligent UI",
+      "summary": "GPT-6扩大至更多用户，回答可直接包含交互图表、可视界面及任务工具。",
+      "importance_reason": "对话产品的输出从文字扩展为可直接操作的界面。",
+      "url": "https://openai.com/index/gpt-6-for-everyone",
+      "tags": [
+        "OpenAI",
+        "科技产品",
+        "每周重点"
+      ],
+      "existing_id": "openai-intelligent-ui",
+      "evidence": {
+        "url": "https://openai.com/index/gpt-6-for-everyone",
+        "source_title": "GPT-6 and Intelligent UI for everyone",
+        "date_evidence": "Official RSS pubDate 2026-10-07; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:32.744Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-10-06-00427e47df",
+      "source_id": "openai",
+      "published_at": "2026-10-06",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 88,
+      "title": "OpenAI 集中发布新一批 AI 数学研究结果",
+      "summary": "公司通过GitHub公开数学结果、部分Lean证明与研究过程信息，邀请学界检查和延伸研究。",
+      "importance_reason": "持续公开材料便于评估AI科研能力及可靠性。",
+      "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+      "tags": [
+        "OpenAI",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/sharing-ai-progress-in-mathematics",
+        "source_title": "Sharing AI progress in mathematics",
+        "date_evidence": "Official RSS pubDate 2026-10-06; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:33.117Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-10-07-1815740c61",
+      "source_id": "nvidia",
+      "published_at": "2026-10-07",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 88,
+      "title": "NVIDIA 与微软公布 RTX Spark Windows PC 生态",
+      "summary": "双方介绍RTX Spark与Windows智能体生态，同时公布面向企业桌面的DGX Station方案。",
+      "importance_reason": "操作系统、PC芯片与本地智能体形成联合产品方向。",
+      "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/",
+        "source_title": "NVIDIA, Microsoft Kick Off a New Beginning for Windows PCs With RTX Spark and AI Agents",
+        "date_evidence": "Official newsroom archive local dateline 2026-10-07; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:29.668Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "67a9e4f59c58d6a7840ee555e0cde1212ea903e2c5cfbceeeea0dca46bd830aa",
+        "index_url": "https://nvidianews.nvidia.com/news?page=6"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-10-08-c4a1f46e5a",
+      "source_id": "anthropic",
+      "published_at": "2026-10-08",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 87,
+      "title": "Anthropic 启动 Cyber Mission",
+      "summary": "计划为关键基础设施与开源软件提供模型、工程与研究资源，推动漏洞发现及修复。",
+      "importance_reason": "AI网络防御从单项工具发展为持续服务计划。",
+      "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+      "tags": [
+        "Anthropic",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/anthropic-cyber-mission",
+        "source_title": "Introducing the Anthropic Cyber Mission",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-08T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:41.410Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "38b2ce0ab82014dad3d708b8ff5ca1e48cc849e801b3d99763420438192e4580"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-10-08-4e66a7e453",
+      "source_id": "anthropic",
+      "published_at": "2026-10-08",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 82,
+      "title": "Anthropic 更新2026年使用政策",
+      "summary": "新版规则补充自主物理行动、敏感使用情境及模型滥用相关要求，并说明支持地区执行口径。",
+      "importance_reason": "能力升级带动平台使用边界调整，企业需关注适用条款。",
+      "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+      "tags": [
+        "Anthropic",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/2026-usage-policy-update",
+        "source_title": "2026 Usage Policy update",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-08T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:42.174Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "97c2ce243822a23980ec7116740f61257d5abc0291d0710eaf2267703ae00064"
+      }
+    },
+    {
+      "event_key": "apple-2026-10-13-15a804e8b9",
+      "source_id": "apple",
+      "published_at": "2026-10-13",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 89,
+      "title": "Apple 发布 HomeView 家庭中枢",
+      "summary": "新设备面向家庭娱乐、沟通与智能家居管理，扩展Apple家庭产品线。",
+      "importance_reason": "智能家居入口竞争可能影响设备与配件生态。",
+      "url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/10/meet-apple-homeview-a-new-way-to-enjoy-entertainment-and-manage-the-home/",
+        "source_title": "Meet Apple HomeView, a new way to enjoy entertainment, stay connected, and manage the home",
+        "date_evidence": "jsonld:datePublished: 2026-10-13Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:45.668Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "0d9aac8d203afc47adf442f52a02530a87c0e3487bb33b72039dd70711aec93a"
+      }
+    },
+    {
+      "event_key": "deepseek-2026-10-17-8d6665ab69",
+      "source_id": "deepseek",
+      "published_at": "2026-10-17",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 91,
+      "title": "DeepSeek 更新 V4.1 Flash 并开放搜索 API",
+      "summary": "1017版升级编码与智能体表现，覆盖网页、App和API；同期开放自研搜索能力。",
+      "importance_reason": "国内模型将推理能力与搜索基础设施进一步整合。",
+      "url": "https://api-docs.deepseek.com/news/news261017/",
+      "tags": [
+        "DeepSeek 官方文档",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://api-docs.deepseek.com/news/news261017/",
+        "source_title": "DeepSeek-V4.1-Flash-1017: Wish-Driven Programming Made Real",
+        "date_evidence": "Official changelog section Date: 2026-10-17; linked dated release page also read.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:31.081Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "c557ba334297a0a802282431dd15c9ba6942846a71860051c1c7b9e53d5dc037"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-10-16-4597113913",
+      "source_id": "nvidia",
+      "published_at": "2026-10-16",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 88,
+      "title": "NVIDIA 宣布 RTX Spark 笔记本开始上市",
+      "summary": "新Windows PC结合RTX图形与本地AI软件栈，合作品牌包括华硕、戴尔、惠普、联想等。",
+      "importance_reason": "从产品预告进入可购买阶段，是不同于发布会的新里程碑。",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-rtx-spark-pcs-available-today-a-new-beginning-for-windows-pcs",
+        "source_title": "NVIDIA RTX Spark PCs Available Today — A New Beginning for Windows PCs",
+        "date_evidence": "Official newsroom archive local dateline 2026-10-16; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:51.714Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "0a0eedebe9756b90700498738afc65a35f88a8e8af8fbe3547af0fbb94498b1f",
+        "index_url": "https://nvidianews.nvidia.com/news?page=4"
+      }
+    },
+    {
+      "event_key": "google-2026-10-15-d84eb0687b",
+      "source_id": "google",
+      "published_at": "2026-10-15",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 88,
+      "title": "Google Universal Cart 在美国上线",
+      "summary": "购物车可整合多家零售商商品并跟踪降价，帮助消费者组织购物选择。",
+      "importance_reason": "AI购物入口增强跨商家商品比较与购买决策能力。",
+      "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+      "tags": [
+        "Google",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/",
+        "source_title": "An intelligent new shopping cart",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-15",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:25.422Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "4e09f53ae352fb5b013ed1ae67c4033cb904d5bb64795c08017976de2e2c573e",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "google-2026-10-15-a7cf7b5743",
+      "source_id": "google",
+      "published_at": "2026-10-15",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 84,
+      "title": "Google 在量子硬件验证魔法态培育方法",
+      "summary": "Google称Science论文展示魔法态培育在其量子硬件上有效，为容错量子计算解决关键环节。",
+      "importance_reason": "量子计算基础能力出现实验研究进展。",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/",
+      "tags": [
+        "Google",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/",
+        "source_title": "Bringing the magic: Google breaks open a bottleneck in quantum computing",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-15",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:28.166Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "214a4eed84dd728ec370d6bf8d90ee6033bbf6ef3528ad3e190b6ebf9a798a25",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-10-15-c3f9aa1e97",
+      "source_id": "anthropic",
+      "published_at": "2026-10-15",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "安全与治理",
+      "topic": "安全与治理",
+      "priority": 85,
+      "title": "Anthropic 向独立评估者提供更深入访问",
+      "summary": "Anthropic为METR团队提供接近员工级别的访问，并与其他组织讨论独立评估合作。",
+      "importance_reason": "外部安全审查开始深入前沿模型研发过程。",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "tags": [
+        "Anthropic",
+        "安全与治理",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+        "source_title": "An update on independent evaluators",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-15T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:41.210Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "8350216dc773bc840eda19b2dc2dec3eb522fcc466d7d416d85268505ca65e70"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-10-15-1e50a57e3b",
+      "source_id": "nvidia",
+      "published_at": "2026-10-15",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 83,
+      "title": "Adobe 与 NVIDIA 扩大 AI 创作合作",
+      "summary": "合作涵盖Photoshop、Premiere、Substance 3D、Frame.io等工具，推进AI创作和制作加速。",
+      "importance_reason": "传统创意软件继续融合智能体与加速计算能力。",
+      "url": "https://nvidianews.nvidia.com/news/adobe-and-nvidia-expand-collaboration-to-speed-agentic-creation",
+      "tags": [
+        "NVIDIA",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/adobe-and-nvidia-expand-collaboration-to-speed-agentic-creation",
+        "source_title": "Adobe and NVIDIA Expand Collaboration to Speed Agentic Creation",
+        "date_evidence": "Official newsroom archive local dateline 2026-10-15; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:51.989Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d113ae366fd99e2b1a36f16dba2d9db2d3caaa2be47f846ed07d5d81fb5288bf",
+        "index_url": "https://nvidianews.nvidia.com/news?page=4"
+      }
+    },
+    {
+      "event_key": "openai-2026-10-21-95dedf578d",
+      "source_id": "openai",
+      "published_at": "2026-10-21",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 91,
+      "title": "OpenAI 宣布模型和 Codex 将接入 Google Cloud",
+      "summary": "合作计划把OpenAI模型和Codex工作流引入Model Garden，并通过Google Cloud Marketplace交易。",
+      "importance_reason": "云平台模型选择扩大，企业部署和采购方式随之变化。",
+      "url": "https://openai.com/index/openai-models-google-cloud",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/openai-models-google-cloud",
+        "source_title": "OpenAI models are coming to Google Cloud",
+        "date_evidence": "Official RSS pubDate 2026-10-21; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:32.429Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-10-22-891b7e0bbf",
+      "source_id": "openai",
+      "published_at": "2026-10-22",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 87,
+      "title": "OpenAI Decisions API 正式可用",
+      "summary": "面向分类、路由等有界决策，支持文本、图像和结构化输入，并增加实时语音集成。",
+      "importance_reason": "低成本低延迟决策组件可嵌入高频业务流程。",
+      "url": "https://openai.com/index/decisions-api",
+      "tags": [
+        "OpenAI",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/decisions-api",
+        "source_title": "Build more responsive apps with the Decisions API",
+        "date_evidence": "Official RSS pubDate 2026-10-22; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:32.454Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "openai-2026-10-21-b1215e1aef",
+      "source_id": "openai",
+      "published_at": "2026-10-21",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 87,
+      "title": "ChatGPT Ads 再扩展26国，累计10万广告主使用",
+      "summary": "OpenAI称广告覆盖范围扩至89国，平台已有超过10万广告主运行过广告。",
+      "importance_reason": "跨境营销新增可覆盖市场及平台采用规模信息。",
+      "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+      "tags": [
+        "OpenAI",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://openai.com/index/chatgpt-ads-expands-26-new-countries",
+        "source_title": "ChatGPT Ads expands to 26 new countries as over 100,000 advertisers have used the platform",
+        "date_evidence": "Official RSS pubDate 2026-10-21; original article checked via web retrieval.",
+        "verification_method": "official_rss_and_web_article",
+        "retrieved_at": "2026-10-25T15:05:32.996Z",
+        "publisher_type": "primary",
+        "direct_http_status": 403,
+        "content_sha256": "89451eb12b49b508a6ee33c7afa22033fe59c63a9a008b7a93f975be2ea50ad6",
+        "hash_scope": "official_rss",
+        "index_url": "https://openai.com/news/rss.xml"
+      }
+    },
+    {
+      "event_key": "anthropic-2026-10-22-bdc7b775ab",
+      "source_id": "anthropic",
+      "published_at": "2026-10-22",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "模型与智能体",
+      "topic": "模型与智能体",
+      "priority": 89,
+      "title": "Agent Skills 标准移交开放基金会",
+      "summary": "Anthropic宣布向Agentic AI Foundation捐赠Agent Skills；官方称已有70多个智能体平台接入。",
+      "importance_reason": "跨平台技能标准有助于企业沉淀可迁移工作流。",
+      "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+      "tags": [
+        "Anthropic",
+        "模型与智能体",
+        "每周重点"
+      ],
+      "existing_id": "anthropic-skills",
+      "evidence": {
+        "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+        "source_title": "Donating Agent Skills to the Agentic AI Foundation",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-22T00:00:00.000Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:40.396Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "f8428027d60cffdd8b29c39b120ca83883d6b2f510b094a3ad0cc6aa34d55e1e"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-10-21-653d201e89",
+      "source_id": "nvidia",
+      "published_at": "2026-10-21",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "芯片与算力",
+      "topic": "芯片与算力",
+      "priority": 90,
+      "title": "Google Cloud 与 NVIDIA 宣布 Vera Rubin 云基础设施正式可用",
+      "summary": "Google Cloud A5X实例采用Vera Rubin NVL72系统，面向智能体与强化学习等计算任务。",
+      "importance_reason": "下一代算力开始进入公有云正式供给。",
+      "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+      "tags": [
+        "NVIDIA",
+        "芯片与算力",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/",
+        "source_title": "Google Cloud and NVIDIA Announce General Availability of NVIDIA Vera Rubin Infrastructure",
+        "date_evidence": "Official newsroom archive local dateline 2026-10-21; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:29.097Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "dd6248ac049775c4a9b66088b9603d2752b3623838dc76815a62e5b01c036319",
+        "index_url": "https://nvidianews.nvidia.com/news?page=2"
+      }
+    },
+    {
+      "event_key": "nvidia-2026-10-21-8d3c0a8863",
+      "source_id": "nvidia",
+      "published_at": "2026-10-21",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科研与机器人",
+      "topic": "科研与机器人",
+      "priority": 87,
+      "title": "NVIDIA 扩展 Isaac 平台与人形机器人参考方案",
+      "summary": "Isaac平台增加参考人形机器人、数据集、运行时及机器人学习工具更新。",
+      "importance_reason": "物理AI开发逐步形成完整参考平台和数据工具链。",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
+      "tags": [
+        "NVIDIA",
+        "科研与机器人",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data",
+        "source_title": "NVIDIA Advances Isaac Platform for General-Purpose Robotics With New Reference Humanoid, Frameworks, Simulation Pipelines and Data",
+        "date_evidence": "Official newsroom archive local dateline 2026-10-21; metadata/page title also checked.",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:06:51.703Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d2d75f49cb7ba2ed36b2f4f55195a09ada4f6ccf6af4a6aabd02dfaeeead0fe9",
+        "index_url": "https://nvidianews.nvidia.com/news?page=2"
+      }
+    },
+    {
+      "event_key": "apple-2026-10-23-d918905edd",
+      "source_id": "apple",
+      "published_at": "2026-10-23",
+      "date_basis": "published",
+      "category": "ai",
+      "sector": "科技产品",
+      "topic": "科技产品",
+      "priority": 86,
+      "title": "iPhone Duo 在 Apple Store 开售",
+      "summary": "Apple宣布首款折叠iPhone进入全球Apple Store门店，发布与实际销售节点分开记录。",
+      "importance_reason": "折叠iPhone进入实际消费者销售阶段。",
+      "url": "https://www.apple.com/newsroom/2026/10/iphone-duo-arrives-at-apple-store-locations-worldwide/",
+      "tags": [
+        "Apple Newsroom",
+        "科技产品",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://www.apple.com/newsroom/2026/10/iphone-duo-arrives-at-apple-store-locations-worldwide/",
+        "source_title": "iPhone Duo arrives at Apple Store locations worldwide",
+        "date_evidence": "jsonld:datePublished: 2026-10-23Z",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:44.408Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "d49c3ea2cdb84db2a94657342b404037b84b5467029ea13b17426d8b157b430a"
+      }
+    },
+    {
+      "event_key": "google-2026-10-20-4fbdd2e8bf",
+      "source_id": "google",
+      "published_at": "2026-10-20",
+      "date_basis": "published",
+      "category": "commerce",
+      "sector": "商业与电商",
+      "topic": "商业与电商",
+      "priority": 83,
+      "title": "Gemini 增加小企业经营工具",
+      "summary": "Google新增企业入口，可连接Google应用、生成品牌视觉并提供经营分析辅助。",
+      "importance_reason": "AI产品开始围绕小商家的具体经营任务整合功能。",
+      "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/",
+      "tags": [
+        "Google",
+        "商业与电商",
+        "每周重点"
+      ],
+      "evidence": {
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/new-tools-small-business-owners/",
+        "source_title": "New Gemini tools for small business owners",
+        "date_evidence": "meta[property=\"article:published_time\"]: 2026-10-20",
+        "verification_method": "primary_page_and_date",
+        "retrieved_at": "2026-10-25T15:05:25.323Z",
+        "publisher_type": "primary",
+        "direct_http_status": 200,
+        "content_sha256": "c57332ffa79e4082c6222fee5981d70d378ca3a029c13b050aac5f6fa5743f53",
+        "index_url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-september-2026/"
+      }
+    }
+  ]
+}
