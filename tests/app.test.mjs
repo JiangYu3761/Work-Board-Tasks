@@ -1,10 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {randomUUID} from 'node:crypto';
+import {randomUUID,createHash} from 'node:crypto';
+import {fileURLToPath} from 'node:url';
 import {pool} from '../lib/db.mjs';
 import {validSummary,safeUrl} from '../lib/sync.mjs';
 const origin=`http://127.0.0.1:${process.env.PORT||4317}`;
 const get=async path=>{const r=await fetch(origin+path);assert.equal(r.status,200);return r.json();};
+test('Desktop health identifies this project without exposing its filesystem path',async()=>{
+  const response=await fetch(origin+'/api/health');
+  assert.equal(response.status,200);
+  const directory=fileURLToPath(new URL('..',import.meta.url)).replace(/\/$/,'');
+  assert.equal(response.headers.get('x-north-project'),createHash('sha256').update(directory).digest('hex'));
+  assert.deepEqual(await response.json(),{ok:true,database:'postgresql'});
+});
 test('Published records satisfy the 100-character limit and have usable source links',async()=>{
   const {items}=await get('/api/articles');assert.ok(items.length>=74);
   for(const a of items){assert.ok(Array.from(a.summary).length<=100);assert.ok(a.summary.length>0);assert.ok(safeUrl(a.url));assert.ok(a.source_name);}

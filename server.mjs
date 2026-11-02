@@ -1,4 +1,5 @@
 import http from 'node:http';
+import {createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -21,6 +22,7 @@ import pg from 'pg';
 pg.types.setTypeParser(1082, val=>val);
 const root=path.join(path.dirname(fileURLToPath(import.meta.url)),'public');
 const port=Number(process.env.PORT||4317);
+const projectIdentity=createHash('sha256').update(process.env.NORTH_PROJECT_ROOT||path.dirname(fileURLToPath(import.meta.url))).digest('hex');
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff'};
 function send(res,status,data){res.writeHead(status,headers);res.end(JSON.stringify(res.external&&status>=400?externalError(status,data,res.external.requestId):data));}
 async function body(req){let result='';const limit=/^\/api\/(?:v1\/)?asin-monitors(?:\/|$)/.test(req.url)?2000000:16000;for await(const chunk of req){result+=chunk;if(Buffer.byteLength(result)>limit)throw Object.assign(new Error('提交内容超过允许大小'),{status:413});}try{return JSON.parse(result||'{}');}catch{throw Object.assign(new Error('JSON 格式无效'),{status:400});}}
@@ -39,7 +41,7 @@ const server=http.createServer(async(req,res)=>{
     if(req.method==='POST' && req.headers.origin && ![`http://127.0.0.1:${port}`,`http://localhost:${port}`].includes(req.headers.origin))return send(res,403,{error:'请求来源无效'});
     if(await externalGate(req,res,url,pool,send))return;
     if(await integrationsConsole(req,url,pool,send,res))return;
-    if(url.pathname==='/api/health') {await pool.query('SELECT 1');return send(res,200,{ok:true,database:'postgresql'});}
+    if(url.pathname==='/api/health') {await pool.query('SELECT 1');res.setHeader('X-North-Project',projectIdentity);return send(res,200,{ok:true,database:'postgresql'});}
     if(await asinAPI(req,url,body,send,res,()=>asinWorker?.wake()))return;
     if(await searchAPI(req,url,send,res))return;
     if(await competitorsAPI(req,url,body,send,res))return;
